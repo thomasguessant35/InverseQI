@@ -23,7 +23,8 @@ class Welcome extends CI_Controller {
         {
         	$this->load->model('User_model', 'UserManager');
         	
-			$this->load->view('adminView');
+			$data["listeUser"] = $this->UserManager->get_liste();
+			$this->load->view("adminView", $data);
         }
         
         else if ($this->form_validation->run() == FALSE)
@@ -43,13 +44,31 @@ class Welcome extends CI_Controller {
         		$data['mail'] = $_POST['mail'];
         		        		
 				setcookie('Connexion', 'true', time() + 3600*24, base_url());
-				setcookie('welcome', 'true', time() + 3600*24, base_url());
         		setcookie('mail', $_POST['mail'], time() + 3600*24, base_url());
         		
 				redirect('/welcome/adminConnexion', 'refresh');
         	}
         }
 	
+	}
+
+	public function disconnect()
+	{
+		if (isAuthenticated())
+		{
+			$this->load->helper('cookie');
+			
+			delete_cookie("Connexion");
+			delete_cookie("mail");
+			delete_cookie("PHPSESSID");
+
+			
+			redirect('/', 'refresh');
+		}
+		else
+		{
+			redirect('/', 'refresh');
+		}
 	}
 
 }

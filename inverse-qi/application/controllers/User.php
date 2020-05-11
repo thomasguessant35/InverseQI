@@ -19,20 +19,4 @@ class User extends CI_Controller {
 		
 	}
 
-	public function disconnect()
-	{
-		if (isAuthenticated())
-		{
-			$this->load->helper('cookie');
-			
-			delete_cookie("Connexion");
-			delete_cookie("mail");
-			
-			redirect('/', 'refresh');
-		}
-		else
-		{
-			redirect('/', 'refresh');
-		}
-	}
 }
