@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 	<title>Inverse QI</title>
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 	<!--CSS-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <?php include('z_include_menu.php'); ?>
@@ -18,35 +18,34 @@
 </br>
 </br>
 </br>
-  	<div class="container login_page">
+<div class="container login_page">
 
-        <div class="white login_box z-depth-4" style="padding:20px;">
-            <h5 class="center">Connexion à l'espace d'administration</h5>
-            
-            <form class="" action="user" mathod="post">
-                
-                <h5>Mail</h5>
-                <input type="text" name="username" value="" size="50" />
-                
-                <h5>Mot de passe</h5>
-                <input type="password" name="password" value="" size="50" />
-                
-                <div style="margin:20px;">
-                    <button class="btn waves-effect waves-light right blue" type="submit">Se connecter
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-                </br>
-                </br>
-                <?php if(isset($validation)): ?>
-                    <div class="">
-                        <?= $validation->listErrors() ?>
-                    </div>
-                <?php endif; ?>
-            </form>
-        </div>
+	<div class="white login_box z-depth-4" style="padding:20px;">
+		<h5 class="center">Connexion à l'espace d'administration</h5>
 
-    </div>
+		<form class="" action="user" mathod="post">
+
+			<h5>Mail</h5>
+			<input type="text" name="username" value="" size="50"/>
+
+			<h5>Mot de passe</h5>
+			<input type="password" name="password" value="" size="50"/>
+			<div style="margin:20px;">
+				<button class="btn waves-effect waves-light right blue" type="submit">Se connecter
+					<i class="material-icons right">send</i>
+				</button>
+			</div>
+			</br>
+			</br>
+			<?php if (isset($validation)): ?>
+				<div class="">
+					<?= $validation->listErrors() ?>
+				</div>
+			<?php endif; ?>
+		</form>
+	</div>
+
+</div>
 
 </body>
 </html>
