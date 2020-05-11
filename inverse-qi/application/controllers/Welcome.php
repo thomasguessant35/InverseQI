@@ -46,7 +46,7 @@ class Welcome extends CI_Controller {
 				setcookie('welcome', 'true', time() + 3600*24, base_url());
         		setcookie('mail', $_POST['mail'], time() + 3600*24, base_url());
         		
-				redirect('/', 'refresh');
+				redirect('/welcome/adminConnexion', 'refresh');
         	}
         }
 	

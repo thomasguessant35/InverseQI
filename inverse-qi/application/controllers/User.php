@@ -9,8 +9,8 @@ class User extends CI_Controller {
 		{
 			$this->load->model("user_model", 'UserManager');
 			
-			//$data["listeUser"] = $this->UserManager->get_liste();
-			$this->load->view("adminView");
+			$data["listeUser"] = $this->UserManager->get_liste();
+			$this->load->view("adminView", $data);
 		}
 		else
 		{

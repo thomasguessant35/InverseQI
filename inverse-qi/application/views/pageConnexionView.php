@@ -25,7 +25,7 @@
             
             <?php echo validation_errors(); ?>
 
-            <?php echo form_open('welcome/adminConnexion'); ?>
+            <?php echo form_open(''); ?>
                 
                 <h5>Mail</h5>
                 <input type="text" name="mail" value="" size="50" />
