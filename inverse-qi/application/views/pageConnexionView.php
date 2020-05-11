@@ -23,10 +23,12 @@
         <div class="white login_box z-depth-4" style="padding:20px;">
             <h5 class="center">Connexion à l'espace d'administration</h5>
             
-            <form class="" action="user" mathod="post">
+            <?php echo validation_errors(); ?>
+
+            <?php echo form_open('welcome/adminConnexion'); ?>
                 
                 <h5>Mail</h5>
-                <input type="text" name="username" value="" size="50" />
+                <input type="text" name="mail" value="" size="50" />
                 
                 <h5>Mot de passe</h5>
                 <input type="password" name="password" value="" size="50" />
@@ -38,11 +40,6 @@
                 </div>
                 </br>
                 </br>
-                <?php if(isset($validation)): ?>
-                    <div class="">
-                        <?= $validation->listErrors() ?>
-                    </div>
-                <?php endif; ?>
             </form>
         </div>
 

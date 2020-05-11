@@ -15,36 +15,6 @@ if ( !function_exists('isAuthenticated'))
 	}
 }
 
-if ( !function_exists('getLevel'))
-{
-	function getLevel()
-	{
-		if (isset($_COOKIE["level"]))
-		{
-			return $_COOKIE["level"];
-		}
-		else
-		{
-			return 0;
-		}
-	}
-}
-
-if ( !function_exists('isAdmin'))
-{
-	function isAdmin()
-	{
-		if (isset($_COOKIE["level"]))
-		{
-			return $_COOKIE["level"] == 2;
-		}
-		else
-		{
-			return false;
-		}
-	}
-}
-
 if ( !function_exists('getUsername'))
 {
 	function getUsername()

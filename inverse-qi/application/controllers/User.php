@@ -9,12 +9,12 @@ class User extends CI_Controller {
 		{
 			$this->load->model("user_model", 'UserManager');
 			
-			$data["listeUser"] = $this->UserManager->get_liste();
-			$this->load->view("user_page", $data);
+			//$data["listeUser"] = $this->UserManager->get_liste();
+			$this->load->view("adminView");
 		}
 		else
 		{
-			redirect('/', 'refresh');
+			redirect('/welcome/adminConnexion', 'refresh');
 		}
 		
 	}
@@ -26,8 +26,7 @@ class User extends CI_Controller {
 			$this->load->helper('cookie');
 			
 			delete_cookie("Connexion");
-			delete_cookie("username");
-			delete_cookie("level");
+			delete_cookie("mail");
 			
 			redirect('/', 'refresh');
 		}

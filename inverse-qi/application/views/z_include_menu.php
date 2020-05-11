@@ -4,8 +4,17 @@
         <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="/#">Accueil</a></li>
         </ul>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/index.php/welcome/adminConnexion">Connexion</a></li>
+
+        <?php if(!isAuthenticated()) :?>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/index.php/welcome/adminConnexion">Connexion</a></li>
+            </ul>
+        <?php endif;?>
         </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <?php if(isAuthenticated()) :?>
+            <li><a href="/index.php/user/disconnect">Déconnexion</a></li>
+        <?php endif;?>
+        
     </div>
 </nav>
