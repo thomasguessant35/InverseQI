@@ -28,7 +28,7 @@
 						<label>Intitulé</label>
 						<input type="text" name="intitule" value="<?php echo set_value('intitule'); ?>" size="32" />
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-left:150px;">
                         <div class="area col s3">
                             <label for="image1">Image 1</label>
                             <input type="file" id="image1" name="image1" value="<?php echo set_value('image1'); ?>"/>
@@ -42,7 +42,7 @@
                             <input type="file" id="image3" value="<?php echo set_value('image3'); ?>"/>
                         </div>
                     <div>
-                    <div class="row">
+                    <div class="row" style="padding-left:10px;">
                         <div class="area col s3">
                             <label>Image 4</label>
                             <input type="file" id="image4" value="<?php echo set_value('image4'); ?>"/>
@@ -56,7 +56,7 @@
                             <input type="file" id="image6" value="<?php echo set_value('image6'); ?>"/>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-left:10px;">
                         <div class="area col s3">
                             <label>Image 7</label>
                             <input type="file" id="image7" value="<?php echo set_value('image7'); ?>"/>
@@ -118,15 +118,4 @@
 
 }
     </style>
-    <script>
-        var input = document.querySelector('image1');
-        input.addEventListener('change', updateImageDisplay);
-        function updateImageDisplay() {
-            var curFiles = input.files;
-            var image = document.createElement('img');
-            image.src = window.URL.createObjectURL(curFiles[i]);
-
-            document.querySelector('image1').appendChild(image);
-        }
-    </script>
 </html>
