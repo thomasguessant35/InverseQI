@@ -16,6 +16,7 @@
 
 <body class="blue lighten-5">
 </br>
+<a class="waves-effect waves-light btn center blue" href="<?php echo base_url() . "index.php/question/create/";?>"><i class="material-icons right">assignment_ind</i>Ajouter une question</a>
 </br>
 </br>
 <div class="container">
@@ -23,7 +24,7 @@
 		<a href="#">
 			<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 				<div class="card-image waves-effect waves-block waves-light">
-					<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q1.png'); ?>">
+					<img src="<?php echo base_url('/Image/q1.png'); ?>">
 				</div>
 				<div class="card-content">
 					<p><a href="#">Cliquez pour accéder à la question</a></p>
@@ -32,7 +33,7 @@
 		</a>
 		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q2.png'); ?>">
+				<img src="<?php echo base_url('/Image/q2.png'); ?>">
 			</div>
 			<div class="card-content">
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
@@ -40,7 +41,7 @@
 		</div>
 		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q3.png'); ?>">
+				<img src="<?php echo base_url('/Image/q3.png'); ?>">
 			</div>
 			<div class="card-content">
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
@@ -48,7 +49,7 @@
 		</div>
 		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q4.png'); ?>">
+				<img src="<?php echo base_url('/Image/q4.png'); ?>">
 			</div>
 			<div class="card-content">
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
@@ -58,7 +59,7 @@
 	<div class="row">
 		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q5.png'); ?>">
+				<img src="<?php echo base_url('/Image/q5.png'); ?>">
 			</div>
 			<div class="card-content">
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
@@ -66,7 +67,7 @@
 		</div>
 		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q6.png'); ?>">
+				<img src="<?php echo base_url('/Image/q6.png'); ?>">
 			</div>
 			<div class="card-content">
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
@@ -74,7 +75,7 @@
 		</div>
 		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q7.png'); ?>">
+				<img src="<?php echo base_url('/Image/q7.png'); ?>">
 			</div>
 			<div class="card-content">
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
@@ -82,7 +83,7 @@
 		</div>
 		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('inverseQI/inverse-qi/Image/q8.png'); ?>">
+				<img src="<?php echo base_url('/Image/q8.png'); ?>">
 			</div>
 			<div class="card-content">
 				<p><a href="#">Cliquez pour accéder à la question</a></p>

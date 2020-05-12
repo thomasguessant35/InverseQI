@@ -21,27 +21,27 @@
 
 	<div class="container" style="width: 40%">
 		<div class="row">
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i1q1.png'); ?>" alt="">
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i1q1.png'); ?>" alt="">
 			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i2q1.png'); ?>" alt="">
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i2q1.png'); ?>" alt="">
 			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i3q1.png'); ?>" alt="">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i4q1.png'); ?>" alt="">
-			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i5q1.png'); ?>" alt="">
-			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i6q1.png'); ?>" alt="">
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i3q1.png'); ?>" alt="">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i7q1.png'); ?>" alt="">
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i4q1.png'); ?>" alt="">
 			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i8q1.png'); ?>" alt="">
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i5q1.png'); ?>" alt="">
 			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/i9q1.png'); ?>" alt="">
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i6q1.png'); ?>" alt="">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i7q1.png'); ?>" alt="">
+			</div>
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i8q1.png'); ?>" alt="">
+			</div>
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/i9q1.png'); ?>" alt="">
 			</div>
 		</div>
 	</div>

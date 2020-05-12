@@ -16,15 +16,13 @@
 
 <body class="blue lighten-5">
 </br>
-</br>
-</br>
 <div class="container white salarie_page z-depth-2" style="padding:20px;">
 			<h1>Gestion des utilisateurs</h1>
 		
 			<p>Liste des utilisateurs</p>
-			<a class="waves-effect waves-light btn right" href="<?php //echo base_url() . "user/create/";?>"><i class="material-icons right">assignment_ind</i>Ajouter un utilisateur</a>
+			<a class="waves-effect waves-light btn right blue" href="<?php //echo base_url() . "user/create/";?>"><i class="material-icons right">assignment_ind</i>Ajouter un utilisateur</a>
 			<div class="row">			
-				<table class="bordered highlight">
+				<table class="bordered highlight center">
 					<thead>
                         <th>Id</th>
                         <th>Prenom</th>
@@ -47,8 +45,7 @@
 					</tbody>
 				</table>
 			</div>
-			<a class="waves-effect waves-light btn right" href="<?php //echo base_url() . "user/create/";?>"><i class="material-icons right">assignment_ind</i>Ajouter un utilisateur</a>
-            </br>
+			<a class="waves-effect waves-light btn right blue" href="<?php //echo base_url() . "user/create/";?>"><i class="material-icons right">assignment_ind</i>Ajouter un utilisateur</a>
             </br>
             </br>
         </div>

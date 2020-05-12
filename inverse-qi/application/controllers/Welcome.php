@@ -61,7 +61,6 @@ class Welcome extends CI_Controller {
 			delete_cookie("Connexion");
 			delete_cookie("mail");
 			delete_cookie("PHPSESSID");
-
 			
 			redirect('/', 'refresh');
 		}
