@@ -2,7 +2,7 @@
     <div class="nav-wrapper blue darken-1">
         <a href="/" class="brand-logo center">Invers QI</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="/">Accueil</a></li>
+        <li><a href="/index.php/test">Accueil</a></li>
         <?php if(isAuthenticated()) :?>
             <li><a href="/index.php/question">Questions</a></li>
         <?php endif;?>

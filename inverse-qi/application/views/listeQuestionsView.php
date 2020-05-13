@@ -22,7 +22,7 @@
 <div class="container">
 	<div class="row">
 		<a href="#">
-			<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+			<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 				<div class="card-image waves-effect waves-block waves-light">
 					<img src="<?php echo base_url('/Image/q1.png'); ?>">
 				</div>
@@ -31,7 +31,7 @@
 				</div>
 			</div>
 		</a>
-		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img src="<?php echo base_url('/Image/q2.png'); ?>">
 			</div>
@@ -39,7 +39,7 @@
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
 			</div>
 		</div>
-		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img src="<?php echo base_url('/Image/q3.png'); ?>">
 			</div>
@@ -47,7 +47,7 @@
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
 			</div>
 		</div>
-		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img src="<?php echo base_url('/Image/q4.png'); ?>">
 			</div>
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+	<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img src="<?php echo base_url('/Image/q5.png'); ?>">
 			</div>
@@ -65,7 +65,7 @@
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
 			</div>
 		</div>
-		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img src="<?php echo base_url('/Image/q6.png'); ?>">
 			</div>
@@ -73,7 +73,7 @@
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
 			</div>
 		</div>
-		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img src="<?php echo base_url('/Image/q7.png'); ?>">
 			</div>
@@ -81,7 +81,7 @@
 				<p><a href="#">Cliquez pour accéder à la question</a></p>
 			</div>
 		</div>
-		<div class="card col s3 hoverable" style="width: 302px; margin: 4px; height: 363px !important;">
+		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img src="<?php echo base_url('/Image/q8.png'); ?>">
 			</div>
