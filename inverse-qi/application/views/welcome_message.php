@@ -52,28 +52,28 @@
 	<form action="#" method="post">
 		<div class="container">
 			<div class="row">
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r1.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r1.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="1" type="radio" checked/>
 						<span></span>
 					</label>
 				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r2.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r2.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="2" type="radio"/>
 						<span></span>
 					</label>
 				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r3.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r3.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="3" type="radio"/>
 						<span></span>
 					</label>
 				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r4.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r4.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="4" type="radio"/>
@@ -82,28 +82,28 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r5.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r5.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="5" type="radio"/>
 						<span></span>
 					</label>
 				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r6.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r6.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="6" type="radio"/>
 						<span></span>
 					</label>
 				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r7.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r7.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="7" type="radio"/>
 						<span></span>
 					</label>
 				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('inverseQI/inverse-qi/Image/r8.png'); ?>"
+				<div class="col s3 center"><img src="<?php echo base_url('/Image/r8.png'); ?>"
 												alt=""><br>
 					<label>
 						<input class="with-gap" name="answer" value="8" type="radio"/>
