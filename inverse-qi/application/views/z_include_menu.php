@@ -5,6 +5,7 @@
         <li><a href="/index.php/test">Accueil</a></li>
         <?php if(isAuthenticated()) :?>
             <li><a href="/index.php/question">Questions</a></li>
+			<li><a href="/index.php/test/listQuizz">Listes des quizz</a></li>
         <?php endif;?>
         </ul>
 
@@ -18,6 +19,6 @@
         <?php if(isAuthenticated()) :?>
             <li><a href="/index.php/welcome/disconnect">Déconnexion</a></li>
         <?php endif;?>
-        
+
     </div>
 </nav>
