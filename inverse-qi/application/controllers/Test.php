@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Test extends CI_Controller {
-
-	public function index()
+   
+    public function index()
 	{
 		$this->load->helper(array('form', 'url'));
 
@@ -25,8 +25,9 @@ class Test extends CI_Controller {
                                                 
                 $data["listeTest"] = $this->TestManager->get_liste();
                 $this->load->view("welcome_message", $data);
+            }else{
+                $this->load->view('accueilTest');
             }
         }
-        
 	}
 }
