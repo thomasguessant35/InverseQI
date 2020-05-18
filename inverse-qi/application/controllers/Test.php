@@ -15,20 +15,53 @@ class Test extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('accueilTest');
 
-		} else {
-			$this->load->model('Test_model', 'TestManager');
-			$data['qry'] = $this->TestManager->test_valid($_POST['codeTest']);
+        }else{
+            $this->load->model('Test_model', 'TestManager');
+            
+            $data['idTest'] = $this->TestManager->test_valid($_POST['codeTest']);
 
-			if ($data['qry']) {
-				$data['codeTest'] = $_POST['codeTest'];
+            $idTest = json_decode(json_encode($data['idTest']),true);
 
-				$data["listeTest"] = $this->TestManager->get_liste();
-				$this->load->view("welcome_message", $data);
-			} else {
-				$this->load->view('accueilTest');
-			}
-		}
-	}
+            if ($data['idTest'] != null)
+            {
+                $data['codeTest'] = $_POST['codeTest'];
+                $data["compteur"] = 0;
+
+                $this->testform($idTest[0]['idQuizz'],$data["compteur"]);
+            }else{
+                $this->load->view('accueilTest');
+            }
+        }
+    }
+    
+    public function testform($idTest, $compteur){
+        $this->load->helper(array('form', 'url'));
+
+        $data["compteur"] = $compteur;
+        $data['idTest'] = $idTest;
+
+        $this->load->model('Question_Test_model', 'QuestionTestManager');
+        $data["idQuestion"] = $this->QuestionTestManager->get_questions_test($idTest);
+
+        if($compteur < count($data["idQuestion"])){
+            
+            $this->load->model('Image_model', 'ImageManager');
+            $this->load->model('Question_model', 'QuestionManager');
+
+            $idQuestion = json_decode(json_encode($data["idQuestion"]),true);
+
+            $data["question"] = $this->QuestionManager->get_question($idQuestion[$compteur]["Questions_idQuestion"]);
+            $data["listeImage"] = $this->ImageManager->get_image($idQuestion[$compteur]["Questions_idQuestion"]);
+            $data["compteur"]++;
+            
+            $this->load->view("welcome_message", $data);
+        }else if($compteur == count($data["idQuestion"])){
+            $this->load->view("congrats_message", $data);
+        }else{
+            redirect('/test', 'refresh');
+        }
+            
+    }
 
 	public function listQuizz()
 	{

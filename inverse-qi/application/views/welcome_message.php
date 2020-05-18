@@ -20,36 +20,24 @@
 	<h5 class="center">Question : </h5><br>
 
 	<div class="container" style="width: 40%">
+		<?php $cmpt=0;?>
 		<div class="row">
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i1q1.png'); ?>" alt="">
+		<?php foreach($listeImage as $image):?>
+			<?php if($cmpt==2):?>
+				</div>
+				<div class="row">
+				<?php $cmpt=0;?>
+			<?php endif; ?>
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$image->Image); ?>" alt="">
 			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i2q1.png'); ?>" alt="">
-			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i3q1.png'); ?>" alt="">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i4q1.png'); ?>" alt="">
-			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i5q1.png'); ?>" alt="">
-			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i6q1.png'); ?>" alt="">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i7q1.png'); ?>" alt="">
-			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i8q1.png'); ?>" alt="">
-			</div>
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/i9q1.png'); ?>" alt="">
-			</div>
+		<?php endforeach; ?>
 		</div>
 	</div>
-	<h5 class="center">Quelle est la figure logique </h5>
-	<h5 class="center">à la place du point d'interrogation ? </h5><br><br>
+	<?php foreach($question as $q):?>
+	<h5 class="center"><?php echo $q->Intitule; ?> </h5><br><br>
+	<?php endforeach; ?>
 
-
-	<form action="#" method="post">
+	<?php echo form_open('test/testform/'.$idTest.'/'.$compteur, 'class="col s12"'); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col s3 center"><img src="<?php echo base_url('/Image/r1.png'); ?>"
@@ -113,7 +101,7 @@
 			</div>
 
 			<div class="row center">
-				<button class="btn waves-effect blue" type="submit" name="action">Submit
+				<button class="btn waves-effect blue" type="submit" name="action">Suivant
 					<i class="material-icons right">send</i>
 				</button>
 			</div>

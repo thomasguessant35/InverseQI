@@ -16,11 +16,11 @@ class Test_model extends CI_Model
 
 	public function test_valid($codeTest)
 	{
-		$data = $this->db->select('*')
-			->from($this->table)
-			->where('codeTest', $codeTest)
-			->get()
-			->result();
+		$data = $this->db->select('idQuizz')
+					     ->from($this->table)
+					     ->where('codeTest', $codeTest)
+					     ->get()
+					     ->result();
 		return $data;
 	}
 
