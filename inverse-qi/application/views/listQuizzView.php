@@ -22,7 +22,8 @@
 	<h1 class="center">Gestion des quizz</h1>
 
 	<p>Liste des Quizz</p>
-	<a class="waves-effect waves-light btn right blue" href="<?php //echo base_url() . "user/create/";?>"><i
+	<a class="waves-effect waves-light btn right blue"
+	   href="<?php echo base_url() . "index.php/question/Quizz_Create"; ?>"><i
 				class="material-icons right">assignment_ind</i>Ajouter un quizz</a>
 	<div class="row">
 		<table class="bordered highlight center">
