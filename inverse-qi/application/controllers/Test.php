@@ -44,18 +44,59 @@ class Test extends CI_Controller
         $data["idQuestion"] = $this->QuestionTestManager->get_questions_test($idTest);
 
         if($compteur < count($data["idQuestion"])){
-            
+
+            if(!empty($_POST['answer'])){
+                $newdata = array( 
+                    'Rep'.$compteur => $_POST['answer']
+                ); 
+                $this->session->set_userdata($newdata);
+            }
+
             $this->load->model('Image_model', 'ImageManager');
             $this->load->model('Question_model', 'QuestionManager');
 
             $idQuestion = json_decode(json_encode($data["idQuestion"]),true);
+            $data["idQuestion"] = $idQuestion[$compteur]["Questions_idQuestion"];
 
-            $data["question"] = $this->QuestionManager->get_question($idQuestion[$compteur]["Questions_idQuestion"]);
-            $data["listeImage"] = $this->ImageManager->get_image($idQuestion[$compteur]["Questions_idQuestion"]);
+            $data["question"] = $this->QuestionManager->get_question($data["idQuestion"]);
+            $data["listeImage"] = $this->ImageManager->get_image($data["idQuestion"]);
             $data["compteur"]++;
             
             $this->load->view("welcome_message", $data);
         }else if($compteur == count($data["idQuestion"])){
+
+            if(!empty($_POST['answer'])){
+                $newdata = array( 
+                    'Rep'.$compteur => $_POST['answer']
+                ); 
+                $this->session->set_userdata($newdata);
+            }
+            
+            $data["score"] = 0;
+            
+            for($i = 1; $i <= $compteur; $i++){
+                if($this->session->userdata('Rep'.$i) == 'true'){
+                    $data["score"]++;
+                }
+            }
+
+            $data["score"] = ($data["score"]/($compteur))*160;
+
+            if($data["score"] >= 130){
+                $data["imageFin"] = 'einstein.jpg';
+                $data["messageFin"] = 'Votre QI s\'approche de celui d\'Albert Einstein, vous êtes un vrai génie !';
+            }elseif ($data["score"] < 130 && $data["score"] >= 110) {
+                $data["imageFin"] = 'bach.jpg';
+                $data["messageFin"] = 'Votre QI s\'approche de celui Jean Sébastien Bach, vous êtes un vrai virtuose !';
+            }elseif ($data["score"] < 110 && $data["score"] >= 90) {
+                $data["imageFin"] = 'charlie.jpg';
+                $data["messageFin"] = 'Votre QI est dans la moyenne, vous êtes comme tout le monde !';
+            }elseif ($data["score"] < 90) {
+                $data["imageFin"] = 'pinocchio.jpg';
+                $data["messageFin"] = 'Votre QI est ingérieur à la moyenne, c\'est forcément une erreur !';
+            }
+
+            $this->session->sess_destroy();
             $this->load->view("congrats_message", $data);
         }else{
             redirect('/test', 'refresh');

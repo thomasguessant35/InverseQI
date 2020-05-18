@@ -16,10 +16,13 @@
 
 <body class="blue lighten-5">
 </br>
-</br>
-</br>
   
-  <h1 class="center">Congratulation !</h1>
+  <h3 class="center">Félicitaions !</h3>
+
+  <h5 class="center">Votre QI est de <?php echo $score ?></h5>
+
+  <div class="col s3 center"><img sizes="(max-width: 300px) (max-width: 200px)" width="400" src="<?php echo base_url('/Image/'.$imageFin); ?>"alt=""><br>
+  <h5 class="center"><?php echo $messageFin ?></h5>
 
 </body>
 </html>
