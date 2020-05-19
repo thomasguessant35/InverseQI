@@ -9,6 +9,11 @@ class Question extends CI_Controller
 		$this->load->view("listeQuestionsView" /*, $data*/);
 	}
 
+	public function ajouter(){
+		$this->load->view("AjoutQuestionView");
+	}
+
+
 	public function create()
 	{
 		//if (isAuthenticated())

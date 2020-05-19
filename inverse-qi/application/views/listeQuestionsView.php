@@ -16,7 +16,7 @@
 
 <body class="blue lighten-5">
 </br>
-<a class="waves-effect waves-light btn center blue" href="<?php echo base_url() . "index.php/question/create/";?>"><i class="material-icons right">assignment_ind</i>Ajouter une question</a>
+<a class="waves-effect waves-light btn center blue" href="<?php echo base_url() . "index.php/question/ajouter/";?>"><i class="material-icons right">assignment_ind</i>Ajouter une question</a>
 </br>
 </br>
 <div class="container">
