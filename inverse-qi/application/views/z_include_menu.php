@@ -3,21 +3,21 @@
 		<a href="/" class="brand-logo center">Invers QI</a>
 		<ul id="nav-mobile" class="left hide-on-med-and-down">
 			<li><a href="/index.php/test">Accueil</a></li>
-			<?php /*if (isAuthenticated()) : */?>
+			<?php if ($this->session->userdata('Loggin')) :?>
 				<li><a href="/index.php/question">Questions</a></li>
 				<li><a href="/index.php/test/listQuizz">Listes des quizz</a></li>
-			<?php /*endif; */?>
+			<?php endif;?>
 		</ul>
 
-		<?php /*if (!isAuthenticated()) : */?>
+		<?php if (!$this->session->userdata('Loggin')) :?>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="/index.php/welcome/adminConnexion">Connexion</a></li>
 			</ul>
-		<?php /*endif; */?>
+		<?php endif;?>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<?php /*if (isAuthenticated()) : */?>
+			<?php if ($this->session->userdata('Loggin')) :?>
 				<li><a href="/index.php/welcome/disconnect">Déconnexion</a></li>
-			<?php /*endif; */?>
+			<?php endif; ?>
 
 	</div>
 </nav>

@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
         $this->form_validation->set_rules('mail', 'Mail', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
-        if (isAuthenticated())
+        if ($this->session->userdata('Loggin'))
         {
         	$this->load->model('User_model', 'UserManager');
         	
@@ -42,9 +42,12 @@ class Welcome extends CI_Controller {
         	if ($data['qry'])
         	{
         		$data['mail'] = $_POST['mail'];
-        		        		
-				setcookie('Connexion', 'true', time() + 3600*24, base_url());
-        		setcookie('mail', $_POST['mail'], time() + 3600*24, base_url());
+				
+				$newdata = array( 
+					'Loggin' => TRUE,
+					'mail' => $_POST['mail']
+                ); 
+                $this->session->set_userdata($newdata);
         		
 				redirect('/welcome/adminConnexion', 'refresh');
         	}
@@ -54,13 +57,9 @@ class Welcome extends CI_Controller {
 
 	public function disconnect()
 	{
-		if (isAuthenticated())
+		if ($this->session->userdata('Loggin'))
 		{
-			$this->load->helper('cookie');
-			
-			delete_cookie("Connexion");
-			delete_cookie("mail");
-			delete_cookie("PHPSESSID");
+			$this->session->sess_destroy();
 			
 			redirect('/', 'refresh');
 		}
