@@ -39,7 +39,7 @@ if ( isset($_POST["question"]) && !empty($_POST["question"]) ){
 	$canvas8 = str_replace(' ', '+', $canvas8);
 	$canvas8 = base64_decode($canvas8);
 
-	$canvas9 = str_replace('data:image/png;base64,', '', $_POST['$canvas9']);
+	$canvas9 = str_replace('data:image/png;base64,', '', $_POST['canvas9']);
 	$canvas9 = str_replace(' ', '+', $canvas9);
 	$canvas9 = base64_decode($canvas9);
 
@@ -47,7 +47,7 @@ if ( isset($_POST["question"]) && !empty($_POST["question"]) ){
 	$canvas10 = str_replace(' ', '+', $canvas10);
 	$canvas10 = base64_decode($canvas10);
 
-	$canvas11 = str_replace('data:image/png;base64,', '', $_POST['$canvas11']);
+	$canvas11 = str_replace('data:image/png;base64,', '', $_POST['gicanvas11']);
 	$canvas11 = str_replace(' ', '+', $canvas11);
 	$canvas11 = base64_decode($canvas11);
 
@@ -88,12 +88,12 @@ if ( isset($_POST["question"]) && !empty($_POST["question"]) ){
 	file_put_contents('./Image/'.$ident.'/'.$name[6], $canvas6);
 	file_put_contents('./Image/'.$ident.'/'.$name[7], $canvas7);
 	file_put_contents('./Image/'.$ident.'/'.$name[8], $canvas8);
-	file_put_contents('./Image/'.$ident.'/'.$name[9], $canvas8);
-	file_put_contents('./Image/'.$ident.'/'.$name[10], $canvas8);
-	file_put_contents('./Image/'.$ident.'/'.$name[11], $canvas8);
-	file_put_contents('./Image/'.$ident.'/'.$name[12], $canvas8);
-	file_put_contents('./Image/'.$ident.'/'.$name[13], $canvas8);
-	file_put_contents('./Image/'.$ident.'/'.$name[14], $canvas8);
+	file_put_contents('./Image/'.$ident.'/'.$name[9], $canvas9);
+	file_put_contents('./Image/'.$ident.'/'.$name[10], $canvas10);
+	file_put_contents('./Image/'.$ident.'/'.$name[11], $canvas11);
+	file_put_contents('./Image/'.$ident.'/'.$name[12], $canvas12);
+	file_put_contents('./Image/'.$ident.'/'.$name[13], $canvas13);
+	file_put_contents('./Image/'.$ident.'/'.$name[14], $canvas14);
 	//print $success ? $name[0] : 'Unable to save the file.';
 
 }
