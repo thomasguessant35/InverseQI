@@ -63,7 +63,8 @@
 
 		</div>
 	</form>
-
+</br>
+</br>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js' type='text/javascript'></script>
 
 	<script>
@@ -121,4 +122,5 @@
 
 	}
 </style>
+<?php include('z_include_footer.php'); ?>
 </html>

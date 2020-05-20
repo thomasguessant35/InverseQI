@@ -64,5 +64,8 @@
 		<a id="modalButton" href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Supprimer</a>
 	</div>
 </div>
+</br>
+</br>
 </body>
+<?php include('z_include_footer.php'); ?>
 </html>

@@ -65,5 +65,8 @@
 		</div>
 	</form>
 </div>
+</br>
+</br>
 </body>
+<?php include('z_include_footer.php'); ?>
 </html>

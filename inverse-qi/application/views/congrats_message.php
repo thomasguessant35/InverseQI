@@ -24,7 +24,9 @@
   <div class="col s3 center"><img sizes="(max-width: 300px) (max-width: 200px)" width="400" src="<?php echo base_url('/Image/'.$imageFin); ?>"alt=""><br>
   <h5 class="center"><?php echo $messageFin ?></h5>
 
-  <a href=<?php echo "/index.php/test/resultatQuizz/".$idTest?> class="waves-effect waves-light btn">Résultat</a>
-
+  <a href=<?php echo "/index.php/test/resultatQuizz/".$idTest?> class="waves-effect waves-light btn blue">Résultat</a>
+</br>
+</br>
 </body>
+<?php include('z_include_footer.php'); ?>
 </html>
