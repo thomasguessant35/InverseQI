@@ -47,7 +47,7 @@ if ( isset($_POST["question"]) && !empty($_POST["question"]) ){
 	$canvas10 = str_replace(' ', '+', $canvas10);
 	$canvas10 = base64_decode($canvas10);
 
-	$canvas11 = str_replace('data:image/png;base64,', '', $_POST['gicanvas11']);
+	$canvas11 = str_replace('data:image/png;base64,', '', $_POST['canvas11']);
 	$canvas11 = str_replace(' ', '+', $canvas11);
 	$canvas11 = base64_decode($canvas11);
 
