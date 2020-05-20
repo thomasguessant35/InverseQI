@@ -53,6 +53,7 @@ class Test extends CI_Controller
             }
 
             $this->load->model('Image_model', 'ImageManager');
+            $this->load->model('Reponse_model', 'ReponseManager');
             $this->load->model('Question_model', 'QuestionManager');
 
             $idQuestion = json_decode(json_encode($data["idQuestion"]),true);
@@ -60,6 +61,7 @@ class Test extends CI_Controller
 
             $data["question"] = $this->QuestionManager->get_question($data["idQuestion"]);
             $data["listeImage"] = $this->ImageManager->get_image($data["idQuestion"]);
+            $data["listeReponse"] = $this->ReponseManager->get_image($data["idQuestion"]);
             $data["compteur"]++;
             
             $this->load->view("welcome_message", $data);
@@ -81,6 +83,8 @@ class Test extends CI_Controller
             }
 
             $data["score"] = ($data["score"]/($compteur))*160;
+            $this->load->model('Statistique_model', 'StatistiqueManager');
+            $this->StatistiqueManager->add_statistique($data["score"]);
 
             if($data["score"] >= 130){
                 $data["imageFin"] = 'einstein.jpg';
@@ -93,7 +97,7 @@ class Test extends CI_Controller
                 $data["messageFin"] = 'Votre QI est dans la moyenne, vous êtes comme tout le monde !';
             }elseif ($data["score"] < 90) {
                 $data["imageFin"] = 'pinocchio.jpg';
-                $data["messageFin"] = 'Votre QI est ingérieur à la moyenne, c\'est forcément une erreur !';
+                $data["messageFin"] = 'Votre QI est inférieur à la moyenne, c\'est forcément une erreur !';
             }
 
             $this->session->sess_destroy();
@@ -103,6 +107,14 @@ class Test extends CI_Controller
         }
             
     }
+
+    public function resultatQuizz($idTest)
+	{
+		//$this->load->model("Test_model", 'TestManager');
+
+		//$data["listeTest"] = $this->TestManager->get_liste();
+		$this->load->view("resultatView");
+	}
 
 	public function listQuizz()
 	{

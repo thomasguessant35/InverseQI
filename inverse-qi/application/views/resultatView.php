@@ -17,14 +17,22 @@
 <body class="blue lighten-5">
 </br>
   
-  <h3 class="center">Félicitaions !</h3>
+  <h3 class="center">Résultats</h3>
 
-  <h5 class="center">Votre QI est de <?php echo $score ?></h5>
-
-  <div class="col s3 center"><img sizes="(max-width: 300px) (max-width: 200px)" width="400" src="<?php echo base_url('/Image/'.$imageFin); ?>"alt=""><br>
-  <h5 class="center"><?php echo $messageFin ?></h5>
-
-  <a href=<?php echo "/index.php/test/resultatQuizz/".$idTest?> class="waves-effect waves-light btn">Résultat</a>
+    <div class="container" style="width: 40%">
+        <?php $cmpt=0;?>
+        <div class="row">
+        <?php foreach($listeImage as $image):?>
+            <?php if($cmpt==2):?>
+                </div>
+                <div class="row">
+                <?php $cmpt=0;?>
+            <?php endif; ?>
+            <div class="col s4 center"><img src="<?php echo base_url('/Image/'.$image->Image); ?>" alt="">
+            </div>
+        <?php endforeach; ?>
+        </div>
+    </div>
 
 </body>
 </html>

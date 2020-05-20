@@ -39,66 +39,23 @@
 
 	<?php echo form_open('test/testform/'.$idTest.'/'.$compteur, 'class="col s12"'); ?>
 		<div class="container">
+			<?php $cmpt=0;?>
 			<div class="row">
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r1.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="true" type="radio" checked/>
-						<span></span>
-					</label>
+			<?php foreach($listeReponse as $image):?>
+				<?php if($cmpt==3):?>
+					</div>
+				<div class="row">
+					<?php $cmpt=0;?>
+					<?php endif; ?>
+					<div class="col s3 center"><img src="<?php echo base_url('/Image/'.$image->Image); ?>"
+													alt=""><br>
+						<label>
+							<input class="with-gap" name="answer" value="true" type="radio" checked/>
+							<span></span>
+						</label>
+					</div>
+			<?php endforeach; ?>
 				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r2.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="false" type="radio"/>
-						<span></span>
-					</label>
-				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r3.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="false" type="radio"/>
-						<span></span>
-					</label>
-				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r4.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="false" type="radio"/>
-						<span></span>
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r5.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="false" type="radio"/>
-						<span></span>
-					</label>
-				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r6.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="false" type="radio"/>
-						<span></span>
-					</label>
-				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r7.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="false" type="radio"/>
-						<span></span>
-					</label>
-				</div>
-				<div class="col s3 center"><img src="<?php echo base_url('/Image/r8.png'); ?>"
-												alt=""><br>
-					<label>
-						<input class="with-gap" name="answer" value="false" type="radio"/>
-						<span></span>
-					</label>
-				</div>
-			</div>
 
 			<div class="row center">
 				<button class="btn waves-effect blue" type="submit" name="action">Suivant

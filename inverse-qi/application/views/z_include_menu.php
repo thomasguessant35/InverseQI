@@ -5,7 +5,7 @@
 			<li><a href="/index.php/test">Accueil</a></li>
 			<?php if ($this->session->userdata('Loggin')) :?>
 				<li><a href="/index.php/question">Questions</a></li>
-				<li><a href="/index.php/test/listQuizz">Listes des quizz</a></li>
+				<li><a href="/index.php/test/listQuizz">Quizz</a></li>
 			<?php endif;?>
 		</ul>
 
