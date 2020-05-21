@@ -1,5 +1,5 @@
-<nav>
-	<div class="nav-wrapper blue darken-1">
+<nav class="col s12 m12 l12">
+	<div class="nav-wrapper blue darken-1 menu">
 		<a href="/" class="brand-logo center">Invers QI</a>
 		<ul id="nav-mobile" class="left hide-on-med-and-down">
 			<li><a href="/index.php/test">Accueil</a></li>

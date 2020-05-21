@@ -13,6 +13,9 @@ class Question extends CI_Controller
 		$this->load->view("AjoutQuestionView");
 
 	}
+	public function ajoutAuto(){
+		$this->load->view("ajoutAutomatiqueQuestionView");
+	}
 
 	public function saveV(){
 		$this->load->model('Question_model', 'QuestionManager');

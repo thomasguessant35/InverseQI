@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendor/css/style.css">
 
 <script src=
 		"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
