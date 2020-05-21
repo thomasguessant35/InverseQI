@@ -203,4 +203,4 @@
 </html>
 
 
-<script src="<?php echo base_url(); ?>application/vendor/js/ajoutQuestion.js"></script>
+<script src="<?php echo base_url(); ?>vendor/js/ajoutQuestion.js"></script>
