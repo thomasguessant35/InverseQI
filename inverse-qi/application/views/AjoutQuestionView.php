@@ -12,7 +12,7 @@
 </br>
 
 	<div class="row">
-		
+
 		<div class="row col s3" id="buttoradio">
 
 			<p class="col s12"  style="padding:5px;">Choix du canvas</p>
@@ -148,7 +148,7 @@
 				<a id="Carrevide" class="waves-effect waves-light btn blue">vide</a>
 				<a id="Carrerempli" class="waves-effect waves-light btn blue">plein</a>
 			</div>
-		
+
 
 			<div class="col s12">
 				<div style="text-align:center;padding:20px;">
@@ -203,4 +203,4 @@
 </html>
 
 
-<script src="<?php echo base_url(); ?>vendor/js/ajoutQuestion.js"></script>
+<script src="<?php echo base_url(); ?>application/vendor/js/ajoutQuestion.js"></script>
