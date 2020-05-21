@@ -14,12 +14,11 @@ class Image_model extends CI_Model{
 		return $data;
 	}
 	
-	public function add_image_question($intitule, $image1, $image2, $image3)
+	public function add_image_question($dossier, $id_question)
 	{
-		$this->db->set('intitule', $intitule);
-		$this->db->set('image1', $image1);
-		$this->db->set('image2', $image2);
-		$this->db->set('image3', $image3);
+		$this->db->set('dossier_image', $dossier);
+		$this->db->set('IdQuestion', $id_question);
+
 		
 		return $this->db->insert($this->table);
 	}
