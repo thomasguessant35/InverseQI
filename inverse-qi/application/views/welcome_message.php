@@ -12,17 +12,14 @@
 	<h5 class="center">Question : </h5><br>
 
 	<div class="container" style="width: 40%">
-		<?php $cmpt=0;?>
+		
 		<div class="row">
-		<?php foreach($listeImage as $image):?>
-			<?php if($cmpt==2):?>
-				</div>
-				<div class="row">
-				<?php $cmpt=0;?>
-			<?php endif; ?>
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$image->Image); ?>" alt="">
+		<?php for($i=0;$i<=8;$i++):?>
+			
+			<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$i.'.png'); ?>" alt="">
 			</div>
-		<?php endforeach; ?>
+			
+		<?php endfor; ?>
 		</div>
 	</div>
 	<?php foreach($question as $q):?>
@@ -31,23 +28,22 @@
 
 	<?php echo form_open('test/testform/'.$idTest.'/'.$compteur, 'class="col s12"'); ?>
 		<div class="container">
-			<?php $cmpt=0;?>
 			<div class="row">
-			<?php foreach($listeReponse as $image):?>
-				<?php if($cmpt==3):?>
-					</div>
-				<div class="row">
-					<?php $cmpt=0;?>
-					<?php endif; ?>
-					<div class="col s3 center"><img src="<?php echo base_url('/Image/'.$image->Image); ?>"
-													alt=""><br>
-						<label>
-							<input class="with-gap" name="answer" value="true" type="radio" checked/>
-							<span></span>
-						</label>
-					</div>
-			<?php endforeach; ?>
+			<?php foreach($reponses as $reponse):?>
+				<?php $value = "false"; ?>
+				<?php if($reponse == 14):?>
+					<?php $value = "true"; ?>
+				<?php endif;?>
+
+				<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$reponse.'.png'); ?>"
+												alt=""><br>
+					<label>
+						<input class="with-gap" name="answer" value=<?php echo $value ?> type="radio" checked/>
+						<span></span>
+					</label>
 				</div>
+			<?php endforeach; ?>
+			</div>
 
 			<div class="row center">
 				<button class="btn waves-effect blue" type="submit" name="action">Suivant

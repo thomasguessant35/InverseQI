@@ -52,16 +52,18 @@ class Test extends CI_Controller
                 $this->session->set_userdata($newdata);
             }
 
-            $this->load->model('Image_model', 'ImageManager');
-            $this->load->model('Reponse_model', 'ReponseManager');
             $this->load->model('Question_model', 'QuestionManager');
 
             $idQuestion = json_decode(json_encode($data["idQuestion"]),true);
             $data["idQuestion"] = $idQuestion[$compteur]["Questions_idQuestion"];
 
             $data["question"] = $this->QuestionManager->get_question($data["idQuestion"]);
-            $data["listeImage"] = $this->ImageManager->get_image($data["idQuestion"]);
-            $data["listeReponse"] = $this->ReponseManager->get_image($data["idQuestion"]);
+
+            $dossierQuestion = json_decode(json_encode($data["question"]),true);
+            $data["dossierQuestion"] =  $dossierQuestion[0]["rep_image"];
+            
+            $data["reponses"] = $this->reponseAleat();
+
             $data["compteur"]++;
             
             $this->load->view("welcome_message", $data);
@@ -107,6 +109,13 @@ class Test extends CI_Controller
         }
             
     }
+
+    public function reponseAleat()
+	{
+		$reponse = range(9, 14);
+        shuffle($reponse);
+        return $reponse;
+	}
 
     public function resultatQuizz($idTest)
 	{
