@@ -3,17 +3,11 @@
 		<div class="row">
 			<div class="col l6 s12">
 				<h5 class="white-text">Projet Istic 2020</h5>
-				<img src="<?php echo base_url('/Image/logoistic1.png'); ?>" alt="" style="width: 200px; height: 100px;">
+				<img src="<?php echo base_url('/Image/logoistic1.png'); ?>" alt="" style="width: 175px; height: 50px;">
 			</div>
 			<div class="col l4 offset-l2 s12 offset-12">
 				<h5 class="white-text">Réalisé par : </h5>
-				<ul>
-					<li>Roland Tougan</li>
-					<li>Mamady Kourouma</li>
-					<li>Guillaume Mande</li>
-					<li>Mani Rus</li>
-					<li>Thomas Guessant</li>
-				</ul>
+				<p>Roland Tougan, Mamady Kourouma, Guillaume Mande, Mani Rus, Thomas Guessant</p>
 			</div>
 		</div>
 	</div>

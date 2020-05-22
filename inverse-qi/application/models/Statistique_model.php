@@ -13,9 +13,10 @@ class Statistique_model extends CI_Model{
 		return $data;
 	}
 		
-	public function add_statistique($score)
+	public function add_statistique($score, $idQuizz)
 	{
 		$this->db->set('score', $score);
+		$this->db->set('idQuizz', $idQuizz);
 		
 		return $this->db->insert($this->table);
 	}

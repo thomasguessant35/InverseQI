@@ -86,7 +86,7 @@ class Test extends CI_Controller
 
             $data["score"] = ($data["score"]/($compteur))*160;
             $this->load->model('Statistique_model', 'StatistiqueManager');
-            $this->StatistiqueManager->add_statistique($data["score"]);
+            $this->StatistiqueManager->add_statistique($data["score"], $idTest);
 
             if($data["score"] >= 130){
                 $data["imageFin"] = 'einstein.jpg';
@@ -118,11 +118,18 @@ class Test extends CI_Controller
 	}
 
     public function resultatQuizz($idTest)
-	{
-		//$this->load->model("Test_model", 'TestManager');
+	{       
+        $this->load->model('Question_Test_model', 'QuestionTestManager');
+        $this->load->model('Question_model', 'QuestionManager');
+        $data["idQuestion"] = $this->QuestionTestManager->get_questions_test($idTest);
+       
+        $idQuestions = json_decode(json_encode($data["idQuestion"]),true);
+        $data["questions"] = array();
+        foreach ($idQuestions as $idQuestion) {
+            array_push($data["questions"],$this->QuestionManager->get_dossier_question($idQuestion["Questions_idQuestion"]));
+        }
 
-		//$data["listeTest"] = $this->TestManager->get_liste();
-		$this->load->view("resultatView");
+		$this->load->view("resultatView", $data);
 	}
 
 	public function listQuizz()

@@ -12,16 +12,18 @@
   <h3 class="center">Résultats</h3>
 
     <div class="container" style="width: 40%">
-        <?php $cmpt=0;?>
         <div class="row">
-        <?php foreach($listeImage as $image):?>
-            <?php if($cmpt==2):?>
-                </div>
-                <div class="row">
-                <?php $cmpt=0;?>
-            <?php endif; ?>
-            <div class="col s4 center"><img src="<?php echo base_url('/Image/'.$image->Image); ?>" alt="">
-            </div>
+        <?php $compt = 1?>
+        <?php foreach($questions as $question):?>
+            <p>Question <?php echo $compt?> : </p>
+            <?php foreach($question as $q):?>
+                <?php for($i=0;$i<=7;$i++):?>
+                    <div class="col s4 center"><img style="border:1px ridge black;" src="<?php echo base_url('/Image/'.$q->rep_image.'/canvas'.$i.'.png'); ?>" alt="">
+                    </div>
+                <?php endfor; ?>
+                <div class="col s4 center"><img style="border:1px ridge black;" src="<?php echo base_url('/Image/'.$q->rep_image.'/canvas14.png'); ?>" alt=""></div>
+            <?php endforeach; ?>
+            <?php $compt++?>
         <?php endforeach; ?>
         </div>
     </div>

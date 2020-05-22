@@ -22,6 +22,16 @@ class Question_model extends CI_Model{
 					     ->result();
 		return $data;
 	}
+
+	public function get_dossier_question($id)
+	{
+		$data = $this->db->select('rep_image')
+					     ->from($this->table)
+					     ->where('idQuestion', $id)
+					     ->get()
+					     ->result();
+		return $data;
+	}
 	
 	public function add_question($intitule, $rep_image)
 	{

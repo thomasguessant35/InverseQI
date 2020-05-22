@@ -11,12 +11,12 @@
 
 	<h5 class="center">Question : </h5><br>
 
-	<div class="container" style="width: 40%">
+	<div class="container" >
 		
 		<div class="row">
 		<?php for($i=0;$i<=8;$i++):?>
 			
-			<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$i.'.png'); ?>" alt="">
+			<div class="col s4 center"><img style="border:1px ridge black;" src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$i.'.png'); ?>" alt="">
 			</div>
 			
 		<?php endfor; ?>
@@ -36,7 +36,7 @@
 				<?php endif;?>
 
 				<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$reponse.'.png'); ?>"
-												alt=""><br>
+												alt="" style="border:1px ridge black;"><br>
 					<label>
 						<input class="with-gap" name="answer" value=<?php echo $value ?> type="radio" checked/>
 						<span></span>
