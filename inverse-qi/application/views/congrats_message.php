@@ -8,15 +8,18 @@
 
 <body class="blue lighten-5">
 </br>
-  
-  <h3 class="center">Félicitaions !</h3>
 
-  <h5 class="center">Votre QI est de <?php echo $score ?></h5>
+<h3 class="center">Félicitaions !</h3>
 
-  <div class="col s3 center"><img sizes="(max-width: 300px) (max-width: 200px)" width="400" src="<?php echo base_url('/Image/'.$imageFin); ?>"alt=""><br>
-  <h5 class="center"><?php echo $messageFin ?></h5>
+<h5 class="center">Votre QI est de <?php echo $score ?></h5>
 
-  <a href=<?php echo "/index.php/test/resultatQuizz/".$idTest?> class="waves-effect waves-light btn blue">Résultat</a>
+<div class="col s3 center"><img sizes="(max-width: 300px) (max-width: 200px)" width="400"
+								src="<?php echo base_url('/Image/' . $imageFin); ?>" alt=""><br>
+	<h5 class="center"><?php echo $messageFin ?></h5>
+
+	<a href=<?php echo "/index.php/test/resultatQuizz/" . $idTest ?> class="waves-effect waves-light btn
+	   blue">Résultat</a>
+</div>
 </br>
 </br>
 </body>

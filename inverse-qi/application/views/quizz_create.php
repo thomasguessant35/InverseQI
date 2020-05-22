@@ -55,6 +55,7 @@
 
 		</div>
 	</form>
+</div>
 </br>
 </br>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js' type='text/javascript'></script>
