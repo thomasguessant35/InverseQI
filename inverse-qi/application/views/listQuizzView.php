@@ -16,7 +16,7 @@
 	<p>Liste des Quizz</p>
 	<a class="waves-effect waves-light btn right blue"
 	   href="<?php echo base_url() . "index.php/question/Quizz_Create"; ?>"><i
-				class="material-icons right">assignment_ind</i>Ajouter un quizz</a>
+			class="material-icons right">assignment_ind</i>Ajouter un quizz</a>
 	<div class="row">
 		<table class="bordered highlight center">
 			<thead>
@@ -32,7 +32,7 @@
 					<td><?php echo $quiz->codeTest; ?></td>
 					<!--Les actions vont ici -->
 					<td><a class="btn waves-effect waves-light blue"
-						   href="<?php /*echo base_url() . "user/edit/" . $user->id;*/ ?>"><i class="material-icons">create</i></a>
+						   href="<?php echo base_url() . "index.php/question/Quizz_modif/" . $quiz->idQuizz;?>"><i class="material-icons">create</i></a>
 						<a class="btn waves-effect waves-light red modal-trigger"
 						   href="<?php /*echo base_url() . "user/delete/" . $user->id;*/ ?>"><i class="material-icons">delete</i></a>
 					</td>

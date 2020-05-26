@@ -17,10 +17,10 @@ class Test_model extends CI_Model
 	public function test_valid($codeTest)
 	{
 		$data = $this->db->select('idQuizz')
-					     ->from($this->table)
-					     ->where('codeTest', $codeTest)
-					     ->get()
-					     ->result();
+			->from($this->table)
+			->where('codeTest', $codeTest)
+			->get()
+			->result();
 		return $data;
 	}
 
@@ -46,7 +46,19 @@ class Test_model extends CI_Model
 
 	public function delete($id)
 	{
-		$this->db->where('idQuestion', $id);
+		$this->db->where('idQuizz', $id);
 		return $this->db->delete($this->table);
+	}
+
+	public function updateQuizz($id,$data){
+
+		$this->db->where('idQuizz', $id);
+		$this->db->update($this->table, $data);
+	}
+
+	public function deleteQuizzQuestion ($id){
+		$this->db->where('Quizz_idQuizz', $id);
+		$this->db->delete('questions_quizz');
+		return true;
 	}
 }

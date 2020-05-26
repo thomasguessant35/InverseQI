@@ -183,4 +183,19 @@ class Question extends CI_Controller
 		$this->load->view("quizz_create", $data);
 	}
 
+	public function Quizz_modif($id){
+		$this->load->model("question_model", 'QuestionManager');
+
+		$data["listeQuestion"] = $this->QuestionManager->getQuestionNotInQuizz($id);
+
+		$data["listeChoix"] = $this->QuestionManager->getQuestionInQuizz($id);
+
+		$data["Name"]		= $this->QuestionManager->getQuizzName($id);
+
+
+		$this->load->view("quizz_ModifView.php", $data);
+
+
+	}
+
 }
