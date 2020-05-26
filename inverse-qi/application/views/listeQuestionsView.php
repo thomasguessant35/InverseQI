@@ -15,7 +15,7 @@
 	<div class="row">
 		<?php foreach ($listeQuestion as $question): ?>
 			<a href="#">
-				<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
+				<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 353px !important;">
 				</br>
 					<div class="card-image waves-effect waves-block waves-light">
 						<?php for ($i=0;$i<8;$i++): ?>
@@ -26,6 +26,9 @@
 					<div class="card-content">
 						<p class="center"><?php echo $question->Intitule; ?></p>
 						<p class="center"><?php echo $question->rep_image; ?></p>
+						</br>
+						<a class="btn waves-effect waves-light red modal-trigger center right"
+						href="<?php echo "/index.php/questions/delete/".$question->idQuestion ;?>"><i class="material-icons">delete</i></a>
 					</div>
 				</div>
 			</a>

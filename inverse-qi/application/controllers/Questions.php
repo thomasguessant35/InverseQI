@@ -21,4 +21,16 @@ class Questions extends CI_Controller
 			redirect('/', 'refresh');
 		}
 	}
+
+	public function delete($id)
+	{
+		if ($this->session->userdata('Loggin'))
+		{
+            $this->load->model('Question_model', 'QuestionManager');
+            $this->QuestionManager->delete($id);
+            redirect('/questions/listeQuestions', 'refresh');
+        }else{
+            redirect('/', 'refresh');
+        }
+	}
 }
