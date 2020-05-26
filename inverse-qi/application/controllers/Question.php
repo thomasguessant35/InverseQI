@@ -9,6 +9,32 @@ class Question extends CI_Controller
 		$this->load->view("listeQuestionsView" /*, $data*/);
 	}
 
+	public function listeQuestions()
+	{
+		if ($this->session->userdata('Loggin')) {
+            $this->load->model("Question_model", 'QuestionManager');
+
+            $data["listeQuestion"] = $this->QuestionManager->get_liste_Question();
+            $this->load->view("listeQuestionsView", $data);
+	    }else {
+			redirect('/', 'refresh');
+		}
+	}
+
+	public function delete($id)
+	{
+		if ($this->session->userdata('Loggin'))
+		{
+			$this->load->model('Question_model', 'QuestionManager');
+			$this->load->model('Question_Test_model', 'QuestionTesttManager');
+			$this->QuestionTesttManager->deleteQuestion($id);
+            $this->QuestionManager->delete($id);
+            redirect('/question/listeQuestions', 'refresh');
+        }else{
+            redirect('/', 'refresh');
+        }
+	}
+
 	public function ajouter(){
 		$this->load->view("AjoutQuestionView");
 

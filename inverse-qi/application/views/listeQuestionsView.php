@@ -28,7 +28,7 @@
 						<p class="center"><?php echo $question->rep_image; ?></p>
 						</br>
 						<a class="btn waves-effect waves-light red modal-trigger center right"
-						href="<?php echo "/index.php/questions/delete/".$question->idQuestion ;?>"><i class="material-icons">delete</i></a>
+						href="<?php echo "/index.php/question/delete/".$question->idQuestion ;?>"><i class="material-icons">delete</i></a>
 					</div>
 				</div>
 			</a>

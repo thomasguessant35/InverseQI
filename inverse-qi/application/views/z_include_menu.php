@@ -17,7 +17,7 @@
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="/index.php/test">Accueil</a></li>
 			<?php if ($this->session->userdata('Loggin')) : ?>
-				<li><a href="/index.php/questions/listeQuestions">Questions</a></li>
+				<li><a href="/index.php/question/listeQuestions">Questions</a></li>
 				<li><a href="/index.php/test/listQuizz">Quizz</a></li>
 			<?php endif; ?>
 
