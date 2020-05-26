@@ -134,14 +134,14 @@ class Test extends CI_Controller
 
 	public function listQuizz()
 	{
-		/*if (isAuthenticated())*/ {
-		$this->load->model("Test_model", 'TestManager');
+		if ($this->session->userdata('Loggin')) {
+            $this->load->model("Test_model", 'TestManager');
 
-		$data["listeTest"] = $this->TestManager->get_liste();
-		$this->load->view("listQuizzView", $data);
-	} /*else {
-			redirect('/welcome', 'refresh');
-		}*/
+            $data["listeTest"] = $this->TestManager->get_liste();
+            $this->load->view("listQuizzView", $data);
+	    }else {
+			redirect('/', 'refresh');
+		}
 
 	}
 
@@ -170,6 +170,20 @@ class Test extends CI_Controller
 		}
 
 		redirect(base_url() . "index.php/test/listQuizz", 'refresh');
+    }
+    
+    public function delete($id)
+	{
+		if ($this->session->userdata('Loggin'))
+		{
+            $this->load->model('Test_model', 'TestManager');
+            $this->load->model('Question_Test_model', 'QuestionTesttManager');
+            $this->QuestionTesttManager->delete($id);
+            $this->TestManager->delete($id);
+            redirect('/test/listQuizz', 'refresh');
+        }else{
+            redirect('/', 'refresh');
+        }
 	}
 
 	function getRandomString($length = 8) {

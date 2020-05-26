@@ -34,7 +34,7 @@
 					<td><a class="btn waves-effect waves-light blue"
 						   href="<?php echo base_url() . "index.php/question/Quizz_modif/" . $quiz->idQuizz;?>"><i class="material-icons">create</i></a>
 						<a class="btn waves-effect waves-light red modal-trigger"
-						   href="<?php /*echo base_url() . "user/delete/" . $user->id;*/ ?>"><i class="material-icons">delete</i></a>
+						   href="<?php echo "/index.php/test/delete/" . $quiz->idQuizz;?>"><i class="material-icons">delete</i></a>
 					</td>
 
 				</tr>

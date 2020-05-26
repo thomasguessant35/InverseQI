@@ -7,12 +7,18 @@ class Questions extends CI_Controller
 {
 	public function index()
 	{
-		$this->load->view("listeQuestionsView");
+		$this->load->view("/");
 	}
 
-	public function listesQuestions()
+	public function listeQuestions()
 	{
-		$this->load->helper(array('form', 'url'));
-		$this->load->view('listeQuestionsView');
+		if ($this->session->userdata('Loggin')) {
+            $this->load->model("Question_model", 'QuestionManager');
+
+            $data["listeQuestion"] = $this->QuestionManager->get_liste_Question();
+            $this->load->view("listeQuestionsView", $data);
+	    }else {
+			redirect('/', 'refresh');
+		}
 	}
 }
