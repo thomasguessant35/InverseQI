@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script>
-	$(document).ready(function(){
+	$(document).ready(function () {
 		$('.sidenav').sidenav();
 	});
 </script>
@@ -19,6 +19,7 @@
 			<?php if ($this->session->userdata('Loggin')) : ?>
 				<li><a href="/index.php/question">Questions</a></li>
 				<li><a href="/index.php/test/listQuizz">Quizz</a></li>
+				<li><a href="/index.php/user">Utilisateurs</a></li>
 			<?php endif; ?>
 
 			<?php if (!$this->session->userdata('Loggin')) : ?>
@@ -36,6 +37,7 @@
 	<?php if ($this->session->userdata('Loggin')) : ?>
 		<li><a href="/index.php/question">Questions</a></li>
 		<li><a href="/index.php/test/listQuizz">Quizz</a></li>
+		<li><a href="/index.php/user">Utilisateurs</a></li>
 	<?php endif; ?>
 
 	<?php if (!$this->session->userdata('Loggin')) : ?>

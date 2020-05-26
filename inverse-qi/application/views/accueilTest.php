@@ -10,9 +10,9 @@
 </br>
 </br>
 </br>
-  	<div class="container login_page"  style="margin-bottom: 7.2%;">
+  	<div class="container login_page"  style="margin-bottom: 13.2%;">
 
-        <div class="white login_box z-depth-4" style="padding:20px;">
+        <div class="white login_box z-depth-4" style="padding:50px;">
             <h5 class="center">Connexion au test</h5>
 
             <?php echo validation_errors(); ?>
