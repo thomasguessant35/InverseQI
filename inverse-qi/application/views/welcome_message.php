@@ -15,10 +15,8 @@
 		
 		<div class="row">
 		<?php for($i=0;$i<=8;$i++):?>
-			
-			<div class="col s4 center"><img style="border:1px ridge black;" src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$i.'.png'); ?>" alt="">
+			<div class="col s4 center"><img style="border:1px ridge black;background:white;" src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$i.'.png'); ?>" alt="">
 			</div>
-			
 		<?php endfor; ?>
 		</div>
 	</div>
@@ -36,7 +34,7 @@
 				<?php endif;?>
 
 				<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$reponse.'.png'); ?>"
-												alt="" style="border:1px ridge black;"><br>
+												alt="" style="border:1px ridge black;background:white;"><br>
 					<label>
 						<input class="with-gap" name="answer" value=<?php echo $value ?> type="radio" checked/>
 						<span></span>
