@@ -26,7 +26,13 @@ class Question_Test_model extends CI_Model{
 	
 	public function delete($id)
 	{
-		$this->db->where('idQuizz', $id);
+		$this->db->where('Quizz_idQuizz', $id);
+		return $this->db->delete($this->table);
+	}
+
+	public function deleteQuestion($id)
+	{
+		$this->db->where('Questions_idQuestion', $id);
 		return $this->db->delete($this->table);
 	}
 }

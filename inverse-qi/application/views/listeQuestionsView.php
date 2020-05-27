@@ -13,74 +13,26 @@
 </br>
 <div class="container">
 	<div class="row">
-		<a href="#">
-			<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-				<div class="card-image waves-effect waves-block waves-light">
-					<img src="<?php echo base_url('/Image/q1.png'); ?>">
+		<?php foreach ($listeQuestion as $question): ?>
+			<a href="#">
+				<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 353px !important;">
+				</br>
+					<div class="card-image waves-effect waves-block waves-light">
+						<?php for ($i=0;$i<8;$i++): ?>
+							<img class="col s12" style="padding:10px;border:1px ridge black;max-width: 30%;height: auto;" src="<?php echo base_url('/Image/'.$question->rep_image.'/canvas'.$i.'.png'); ?>">
+						<?php endfor; ?>
+						<img style="padding:10px;border:1px ridge black;max-width: 30%;height: auto;" src="<?php echo base_url('/Image/'.$question->rep_image.'/canvas14.png'); ?>">
+					</div>
+					<div class="card-content">
+						<p class="center"><?php echo $question->Intitule; ?></p>
+						<p class="center"><?php echo $question->rep_image; ?></p>
+						</br>
+						<a class="btn waves-effect waves-light red modal-trigger center right"
+						href="<?php echo "/index.php/question/delete/".$question->idQuestion ;?>"><i class="material-icons">delete</i></a>
+					</div>
 				</div>
-				<div class="card-content">
-					<p><a href="#">Cliquez pour accéder à la question</a></p>
-				</div>
-			</div>
-		</a>
-		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('/Image/q2.png'); ?>">
-			</div>
-			<div class="card-content">
-				<p><a href="#">Cliquez pour accéder à la question</a></p>
-			</div>
-		</div>
-		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('/Image/q3.png'); ?>">
-			</div>
-			<div class="card-content">
-				<p><a href="#">Cliquez pour accéder à la question</a></p>
-			</div>
-		</div>
-		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('/Image/q4.png'); ?>">
-			</div>
-			<div class="card-content">
-				<p><a href="#">Cliquez pour accéder à la question</a></p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-	<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('/Image/q5.png'); ?>">
-			</div>
-			<div class="card-content">
-				<p><a href="#">Cliquez pour accéder à la question</a></p>
-			</div>
-		</div>
-		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('/Image/q6.png'); ?>">
-			</div>
-			<div class="card-content">
-				<p><a href="#">Cliquez pour accéder à la question</a></p>
-			</div>
-		</div>
-		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('/Image/q7.png'); ?>">
-			</div>
-			<div class="card-content">
-				<p><a href="#">Cliquez pour accéder à la question</a></p>
-			</div>
-		</div>
-		<div class="card col s4 hoverable" style="width: 222px; margin: 4px; height: 283px !important;">
-			<div class="card-image waves-effect waves-block waves-light">
-				<img src="<?php echo base_url('/Image/q8.png'); ?>">
-			</div>
-			<div class="card-content">
-				<p><a href="#">Cliquez pour accéder à la question</a></p>
-			</div>
-		</div>
+			</a>
+		<?php endforeach; ?>
 	</div>
 </div>
 </br>

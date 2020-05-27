@@ -141,7 +141,7 @@
 
 			<div class="col s12" style="padding:20px;">
 				<a id="Bluecolor" class="waves-effect waves-light btn blue">Couleur bleu</a>
-				<a id="Redcolor" class="waves-effect waves-light btn red">Couoleur rouge</a>
+				<a id="Redcolor" class="waves-effect waves-light btn red">Couleur rouge</a>
 			</div>
 
 			<div class="col s12" style="padding:20px;">

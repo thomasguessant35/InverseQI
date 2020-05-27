@@ -33,10 +33,8 @@
 					<td><?php echo $user->Nom; ?></td>
 					<td><?php echo $user->Mail; ?></td>
 					<!--Les actions vont ici -->
-					<td><a class="btn waves-effect waves-light blue"
-						   href="<?php /*echo base_url() . "user/edit/" . $user->id;*/ ?>"><i class="material-icons">create</i></a>
-						<a class="btn waves-effect waves-light red modal-trigger"
-						   href="<?php /*echo base_url() . "user/delete/" . $user->id;*/ ?>"><i class="material-icons">delete</i></a>
+					<td><a class="btn waves-effect waves-light blue" href="<?php /*echo base_url() . "user/edit/" . $user->id;*/?>"><i class="material-icons">create</i></a>
+						<a class="btn waves-effect waves-light red modal-trigger" href="<?php echo "/index.php/user/delete/".$user->idUsers;?>"><i class="material-icons">delete</i></a>
 					</td>
 
 				</tr>
@@ -44,8 +42,7 @@
 			</tbody>
 		</table>
 	</div>
-	<a class="waves-effect waves-light btn right blue" href="<?php //echo base_url() . "user/create/";?>"><i
-				class="material-icons right">assignment_ind</i>Ajouter un utilisateur</a>
+	<a class="waves-effect waves-light btn right blue" href="<?php //echo base_url() . "user/create/";?>"><i class="material-icons right">assignment_ind</i>Ajouter un utilisateur</a>
 	</br>
 	</br>
 </div>
