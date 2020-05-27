@@ -23,6 +23,24 @@ class Statistique_model extends CI_Model
 		return $query;
 	}
 
+	public function get_liste_statistique_licence3_moy()
+	{
+		$query = $this->db->query('SELECT avg(score) as moyenne FROM statistique where idQUizz=30');
+		return $query;
+	}
+
+	public function get_liste_statistique_master1_moy()
+	{
+		$query = $this->db->query('SELECT avg(score) as moyenne FROM statistique where idQUizz=29');
+		return $query;
+	}
+
+	public function get_liste_statistique_master2_moy()
+	{
+		$query = $this->db->query('SELECT avg(score) as moyenne FROM statistique where idQUizz=28 ');
+		return $query;
+	}
+
 	public function get_id_quizz()
 	{
 		$data = $this->db->select('idQuizz')

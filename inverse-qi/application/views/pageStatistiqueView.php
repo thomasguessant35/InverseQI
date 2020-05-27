@@ -15,7 +15,7 @@
 
 
 <ul id="tabs-swipe-demo" class="tabs">
-	<li class="tab col s3"><a class="active"  href="#test-swipe-1">Statistique Licence 3</a></li>
+	<li class="tab col s3"><a class="active" href="#test-swipe-1">Statistique Licence 3</a></li>
 	<li class="tab col s3"><a href="#test-swipe-2">Statistique Master 1</a></li>
 	<li class="tab col s3"><a href="#test-swipe-3">Statistique Master 2</a></li>
 </ul>
@@ -23,6 +23,12 @@
 
 	<div class=" white salarie_page z-depth-2" style="padding:20px;">
 		<h1 class="center">Pages des Statistiques</h1>
+
+
+		<?php foreach ($listeStatistique_l3_moy->result() as $statistique): ?>
+			<h3>Moyenne QI Licence 3 : <?php echo $statistique->moyenne ?></h3>
+		<?php endforeach; ?>
+
 
 		<div class="row">
 
@@ -42,14 +48,16 @@
 							<td><?php echo $statistique->nombreScore; ?></td>
 							<td><?php echo $statistique->score; ?></td>
 							<?php array_push($nombreScore, $statistique->nombreScore); ?>
-							<?php array_push($score, "QI ".$statistique->score); ?>
+							<?php array_push($score, "QI " . $statistique->score); ?>
 						</tr>
 					<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div>
 
-			<div class="col s8 hoverable">
+			<div class="col s3"></div>
+
+			<div class="col s3 hoverable">
 				<canvas id="myChart_l3" width="400" height="400"></canvas>
 			</div>
 
@@ -70,6 +78,11 @@
 	<div class=" white salarie_page z-depth-2" style="padding:20px;">
 		<h1 class="center">Pages des Statistiques</h1>
 
+
+		<?php foreach ($listeStatistique_m1_moy->result() as $statistique): ?>
+			<h3>Moyenne QI Master 1 : <?php echo $statistique->moyenne ?></h3>
+		<?php endforeach; ?>
+
 		<div class="row">
 			<div class="col s4 hoverable">
 				<table class="bordered highlight center">
@@ -87,7 +100,7 @@
 							<td><?php echo $statistique->nombreScore; ?></td>
 							<td><?php echo $statistique->score; ?></td>
 							<?php array_push($nombreScore, $statistique->nombreScore); ?>
-							<?php array_push($score, "QI ".$statistique->score); ?>
+							<?php array_push($score, "QI " . $statistique->score); ?>
 						</tr>
 					<?php endforeach; ?>
 					</tbody>
@@ -95,7 +108,9 @@
 			</div>
 
 
-			<div class="col s8 hoverable">
+			<div class="col s3"></div>
+
+			<div class="col s3 hoverable">
 				<canvas id="myChart_m1" width="400" height="400"></canvas>
 			</div>
 
@@ -116,6 +131,12 @@
 	<div class=" white salarie_page z-depth-2" style="padding:20px;">
 		<h1 class="center">Pages des Statistiques</h1>
 
+
+		<?php foreach ($listeStatistique_m2_moy->result() as $statistique): ?>
+			<h3>Moyenne QI Master 2 : <?php echo $statistique->moyenne ?></h3>
+		<?php endforeach; ?>
+
+
 		<div class="row">
 			<div class="col s4 hoverable">
 				<table class="bordered highlight center">
@@ -133,15 +154,16 @@
 							<td><?php echo $statistique->nombreScore; ?></td>
 							<td><?php echo $statistique->score; ?></td>
 							<?php array_push($nombreScore, $statistique->nombreScore); ?>
-							<?php array_push($score, "QI ".$statistique->score); ?>
+							<?php array_push($score, "QI " . $statistique->score); ?>
 						</tr>
 					<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div>
 
+			<div class="col s3"></div>
 
-			<div class="col s8 hoverable">
+			<div class="col s3 hoverable">
 				<canvas id="myChart_m2" width="400" height="400"></canvas>
 			</div>
 
@@ -185,7 +207,7 @@
 			labels: labels_l3,
 			datasets: [{
 				label: "My First dataset",
-				backgroundColor: ['yellow', 'orange', 'red', 'green', 'blue', 'purple', 'indigo','black'],
+				backgroundColor: ['yellow', 'orange', 'red', 'green', 'blue', 'purple', 'indigo', 'black'],
 				borderColor: '#fff',
 				data: data_l3,
 			}]
@@ -210,7 +232,7 @@
 			labels: labels_m1,
 			datasets: [{
 				label: "My First dataset",
-				backgroundColor: ['yellow', 'orange', 'red', 'green', 'blue', 'purple', 'indigo','black'],
+				backgroundColor: ['yellow', 'orange', 'red', 'green', 'blue', 'purple', 'indigo', 'black'],
 				borderColor: '#fff',
 				data: data_m1,
 			}]
@@ -227,7 +249,7 @@
 
 	var ctx_m2 = document.getElementById('myChart_m2').getContext('2d');
 
-	var chart_m2= new Chart(ctx_m2, {
+	var chart_m2 = new Chart(ctx_m2, {
 		// The type of chart we want to create
 		type: 'polarArea',
 
@@ -236,7 +258,7 @@
 			labels: labels_m2,
 			datasets: [{
 				label: "My First dataset",
-				backgroundColor: ['yellow', 'orange', 'red', 'green', 'blue', 'purple', 'indigo','black'],
+				backgroundColor: ['yellow', 'orange', 'red', 'green', 'blue', 'purple', 'indigo', 'black'],
 				borderColor: '#fff',
 				data: data_m2,
 			}]

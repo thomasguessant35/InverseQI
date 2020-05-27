@@ -11,9 +11,9 @@ class Statistique extends CI_Controller
 		$data["listeStatistique_m1"] = $this->StatistiqueManager->get_liste_statistique_master1();
 		$data["listeStatistique_m2"] = $this->StatistiqueManager->get_liste_statistique_master2();
 
-		//$data["idQuizz"] = $this->StatistiqueManager->get_id_quizz();
-		//$data["score"] = $this->StatistiqueManager->get_score();
-
+		$data["listeStatistique_l3_moy"] = $this->StatistiqueManager->get_liste_statistique_licence3_moy();
+		$data["listeStatistique_m1_moy"] = $this->StatistiqueManager->get_liste_statistique_master1_moy();
+		$data["listeStatistique_m2_moy"] = $this->StatistiqueManager->get_liste_statistique_master2_moy();
 
 		$this->load->view("pageStatistiqueView", $data);
 	}
