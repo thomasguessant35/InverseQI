@@ -33,17 +33,19 @@
 					<?php $value = "true"; ?>
 				<?php endif;?>
 
-				<div class="col s4 center"><img src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$reponse.'.png'); ?>"
-												alt="" style="border:1px ridge black;background:white;"><br>
-					<label>
-						<input class="with-gap" name="answer" value=<?php echo $value ?> type="radio" checked/>
+				<div class="col s4 center" >
+					<img src="<?php echo base_url('/Image/'.$dossierQuestion.'/canvas'.$reponse.'.png'); ?>" onclick="pageSvt(<?php echo $reponse ?>)" alt="" style="border:1px ridge black;background:white;">
+					<br>
+					<label style="display: none">
+						<input id="<?php echo $reponse ?>" value="<?php echo $value ?>" name="answer" type="radio" checked />
+
 						<span></span>
 					</label>
 				</div>
 			<?php endforeach; ?>
 			</div>
 
-			<div class="row center">
+			<div class="row center" style="display: none" >
 				<button class="btn waves-effect blue" type="submit" name="action">Suivant
 					<i class="material-icons right">send</i>
 				</button>
@@ -56,3 +58,14 @@
 </body>
 <?php include('z_include_footer.php'); ?>
 </html>
+
+<script>
+	function pageSvt($rep) {
+
+        document.getElementById($rep).checked = true;
+        var x = document.getElementsByTagName("form");
+        x[0].submit();
+
+    }
+
+</script>
