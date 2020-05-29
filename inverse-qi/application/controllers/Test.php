@@ -40,6 +40,10 @@ class Test extends CI_Controller
 		$data["compteur"] = $compteur;
 		$data['idTest'] = $idTest;
 
+		$this->load->model('Test_model', 'TestManager');
+
+		$data['countQuestion'] = $this->TestManager->countQuestion($idTest);
+
 		$this->load->model('Question_Test_model', 'QuestionTestManager');
 		$data["idQuestion"] = $this->QuestionTestManager->get_questions_test($idTest);
 

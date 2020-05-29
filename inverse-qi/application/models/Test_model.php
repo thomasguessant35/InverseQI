@@ -61,4 +61,9 @@ class Test_model extends CI_Model
 		$this->db->delete('questions_quizz');
 		return true;
 	}
+
+	public function countQuestion($id){
+		$sql=('SELECT COUNT(`Questions_idQuestion`) as Nbre FROM `questions_quizz` WHERE `Quizz_idQuizz`='.$id);
+		return $results = $this->db->query( $sql )->result();
+	}
 }
