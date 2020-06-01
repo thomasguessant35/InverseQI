@@ -133,6 +133,9 @@
 			</div>
 		</div>
 	</div>
+    <div class="row center">
+		<a id="tester" class="waves-effect waves-light btn blue">Tester</a>
+	</div>
 </br>
 </br>
 </br>
@@ -141,4 +144,4 @@
 </html>
 
 
-<script src="<?php echo base_url(); ?>vendor/js/ajoutQuestion.js"></script>
+<script src="<?php echo base_url(); ?>vendor/js/testeInverse.js"></script>

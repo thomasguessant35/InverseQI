@@ -9,7 +9,7 @@
 </script>
 <nav class="blue">
 	<div class="nav-wrapper blue darken-1">
-		<a href="/" class="brand-logo center">Invers QI</a>
+		<a href="/" class="brand-logo center">Inverse QI</a>
 
 		<a href="#" class="sidenav-trigger" data-target="mobile-nav">
 			<i class="material-icons">menu</i>
