@@ -1,8 +1,3 @@
-library(OpenImageR)
-library(keras)
-library(tensorflow)
-
-
 gener_dep_h = function(vec_image){
   res = matrix(0,9,9)
   #Si le premier motif est sur la colonne de gauche de la premiere image
@@ -969,6 +964,9 @@ inverse_IQ  = function(model, question){
 }
 
 learn = function(list_finale){
+library(OpenImageR)
+library(keras)
+library(tensorflow)
 
   entree = matrix(0,4*length(list_finale),18)
   #lignes

@@ -12,12 +12,11 @@ list = gener_listes(vecteurs)
 list_h = list$list_hor
 list_v = list$list_ver
 list_finale = list$list_final
-print(length(list_finale))
 #Apprendre le jeu aux neurones
 #model =learn(list_finale)
 
 #Génération de question
-#question = gener_iq()
+question = gener_iq()
 #Inverse IQ : vérifie sur la reponse prédite est identique à la vraie reponse
 #prediction = inverse_IQ(model, question)
 

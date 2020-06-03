@@ -32,8 +32,8 @@
    <div>
     <?php
     $value = "";
-    $value = shell_exec('C:\\"Program Files"\\R\\R-3.6.1\\bin\\Rscript.exe C:\wamp64\www\InverseQI-master\inverse-qi\application\script\test333.R');
-
+    $value = shell_exec('C:\\"Program Files"\\R\\R-3.6.1\\bin\\Rscript.exe C:\wamp64\www\InverseQI\inverse-qi\application\script\test333.R');
+    var_dump($value);
     $matches = array();
     preg_match_all('#[0-1]\s#', $value, $matches, PREG_PATTERN_ORDER);               
     ?>
