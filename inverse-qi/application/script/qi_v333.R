@@ -2,7 +2,7 @@
 #library(R.utils)
 
 
-#Création des vecteurs différents dans la liste Vecteurs
+#Crï¿½ation des vecteurs diffï¿½rents dans la liste Vecteurs
 vecteurs = gener_vecteurs2()
 #length(vecteurs)
 
@@ -15,9 +15,9 @@ list_finale = list$list_final
 #Apprendre le jeu aux neurones
 #model =learn(list_finale)
 
-#Génération de question
+#Gï¿½nï¿½ration de question
 question = gener_iq()
-#Inverse IQ : vérifie sur la reponse prédite est identique à la vraie reponse
+#Inverse IQ : vï¿½rifie sur la reponse prï¿½dite est identique ï¿½ la vraie reponse
 #prediction = inverse_IQ(model, question)
 
 

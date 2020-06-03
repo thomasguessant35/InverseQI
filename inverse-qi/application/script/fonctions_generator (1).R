@@ -712,7 +712,7 @@ gener_iq  = function(){
   if(samsam == 1){
     if(sam_h == 1){
       question = gener_question_h(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_repet)
-      print(" Horizontalement : Répétition horizontale")
+      print(" Horizontalement : Rï¿½pï¿½tition horizontale")
       if(sam_v == 1){
         print(" Verticalement : Repetition verticale")
       }
@@ -731,7 +731,7 @@ gener_iq  = function(){
     }
     if(sam_h == 2){
       question = gener_question_h(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_dep_h)
-      print("Horizontalement : Déplacement horizontal")
+      print("Horizontalement : Dï¿½placement horizontal")
       if(sam_v == 1){
         print(" Verticalement : Repetition verticale")
       }
@@ -750,7 +750,7 @@ gener_iq  = function(){
     }
     if(sam_h == 3){
       question = gener_question_h(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_dep_v)
-      print("Horizontalement : Déplacement vertical ")
+      print("Horizontalement : Dï¿½placement vertical ")
       if(sam_v == 1){
         print(" Verticalement : Repetition verticale")
       }
@@ -807,7 +807,7 @@ gener_iq  = function(){
     }
     if(sam_h == 6){
       question = gener_question_h(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_diag_bas_droite)
-      print("Horizontalement : Déplacement diagonale bas droite ")
+      print("Horizontalement : Dï¿½placement diagonale bas droite ")
       if(sam_v == 1){
         print(" Verticalement : Repetition verticale")
       }
@@ -826,7 +826,7 @@ gener_iq  = function(){
     }
     if(sam_h == 7){
       question = gener_question_h(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_diag_bas_gauche)
-      print("Horizontalement : Déplacement diagonale bas gauche ")
+      print("Horizontalement : Dï¿½placement diagonale bas gauche ")
       if(sam_v == 1){
         print(" Verticalement : Repetition verticale")
       }
@@ -845,7 +845,7 @@ gener_iq  = function(){
     }
     if(sam_h == 8){
       question = gener_question_h(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_diag_haut_droite)
-      print("Horizontalement : Déplacement diagonale haut droite ")
+      print("Horizontalement : Dï¿½placement diagonale haut droite ")
       if(sam_v == 1){
         print(" Verticalement : Repetition verticale")
       }
@@ -864,7 +864,7 @@ gener_iq  = function(){
     }
     if(sam_h == 9){
       question = gener_question_h(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_diag_haut_gauche)
-      print("Horizontalement : Déplacement diagonale haut gauche ")
+      print("Horizontalement : Dï¿½placement diagonale haut gauche ")
       if(sam_v == 1){
         print(" Verticalement : Repetition verticale")
       }
@@ -890,11 +890,11 @@ gener_iq  = function(){
     }
     if(sam_v == 2){
       question = gener_question_v(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_dep_h_v)
-      print("Déplacemnt horizontal verticalement")
+      print("Dï¿½placemnt horizontal verticalement")
     }
     if(sam_v == 3){
       question = gener_question_v(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_dep_v_v)
-      print("Déplacement vertical verticalement")
+      print("Dï¿½placement vertical verticalement")
     }
     if(sam_v == 4){
       question = gener_question_v(vecteurs, list_h[[sam_h]], list_v[[sam_v]], gener_ajout_h_v)
@@ -905,7 +905,7 @@ gener_iq  = function(){
       print("Ajout vertical verticalement")
     }
     if(sam_h == 1){
-      print("Horizontalement : Répétition")
+      print("Horizontalement : Rï¿½pï¿½tition")
     }
     if(sam_h == 2){
       print("Horizontalement : Deplacemnt horizontal")
@@ -958,7 +958,7 @@ inverse_IQ  = function(model, question){
   }
   else
     {
-    print("Prediction différente")
+    print("Prediction diffï¿½rente")
   }
   return(list(o = out, p = p))
 }
@@ -967,6 +967,10 @@ learn = function(list_finale){
 library(OpenImageR)
 library(keras)
 library(tensorflow)
+
+  library(OpenImageR)
+  library(keras)
+  library(tensorflow)
 
   entree = matrix(0,4*length(list_finale),18)
   #lignes

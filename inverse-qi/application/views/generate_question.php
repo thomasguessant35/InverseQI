@@ -14,7 +14,7 @@
     <script src='<?= base_url() ?>resources/dropzone.js' type='text/javascript'></script>
 
 </head>
-<body class="blue lighten-5">
+<body onload="initialize()" class="blue lighten-5">
 
     <?php include('z_include_menu.php'); ?>
 </br>
@@ -25,357 +25,350 @@
     <a class="btn waves-effect waves-light left blue"
     href="<?php echo base_url() . "index.php/question/generate";?>">Générer aléatoirement une question<i class="material-icons right">send</i></a>
 </div>
+</br>
 
 <?php echo validation_errors(); ?>
+<?php if ($ajouter=='true') {
+    echo "La question a été ajoutée";
+}else if ($ajouter=='false'){
+    echo "La question n'a pas été ajoutée";
+} ?>
 <div class="row">
-    <?php echo form_open('question/create', 'class="col s12"'); ?>
+
    <div>
-    <?php
-    $value = "";
-    $value = shell_exec('C:\\"Program Files"\\R\\R-3.6.1\\bin\\Rscript.exe C:\wamp64\www\InverseQI\inverse-qi\application\script\test333.R');
-    var_dump($value);
-    $matches = array();
-    preg_match_all('#[0-1]\s#', $value, $matches, PREG_PATTERN_ORDER);               
-    ?>
-</div>
-<div class="container" >
-    <?php
-    $i=0;
-    ?>
-    <div class="row">
-        <div class="col s4 center">
-         <canvas id="canvas" width="150" height="150" style="border: 1px ridge black"></canvas>
-         <?php
-         if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');
-            ctx.fillRect (0, 0, 50, 50);
-            console.log(ctx)
-            console.log(canvas.toDataURL()) </script>";
-        } 
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
-        }
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
-        }
-        echo "<br>";
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
-        }
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
-        }
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
-        }
-        echo "<br>";
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
-        }
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
-        }
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas = document.getElementById('canvas');
-            var ctx = canvas.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
-        }
-        $i++;
-
+        <?php
+        $value = "";
+        $value = shell_exec('C:\\"Program Files"\\R\\R-3.6.1\\bin\\Rscript.exe C:\\Users\\\"Thomas Guessant"\\Desktop\\InversQI\\inverse-qi\\application\\script\\test333.R');
+        
+        $matches = array();
+        preg_match_all('#[0-1]\s#', $value, $matches, PREG_PATTERN_ORDER);             
         ?>
-        <script type="text/javascript">
-
-            canvas = document.getElementById("canvas");
-            const context = canvas.getContext('2d');
-
-            const pixelBuffer = new Uint32Array(
-                context.getImageData(100, 100, 50, 50).data.buffer
-                );
-            console.log(!pixelBuffer.some(color => color !== 0));
-
-
-        </script>
     </div>
+    <div class="container" >
+        <?php
+        $i=0;
+        ?>
+        <div class="row">
+            <div class="col s4 center">
+            <canvas name="canvas0" id="canvas0" width="150" height="150" style="border: 1px ridge black"></canvas>
+            <?php
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');
+                ctx.fillRect (0, 0, 50, 50);</script>";
+            } 
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
+            }
+            echo "<br>";
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
+            }
+            echo "<br>";
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas = document.getElementById('canvas0');
+                var ctx = canvas.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
+            }
+            $i++;
 
-    <div class="col s4 center">                                   
-        <canvas id="canvas2" width="150" height="150" style="border: 1px ridge black"></canvas>
+            ?>
+           
+        </div>
+
+        <div class="col s4 center">                                   
+            <canvas name="canvas1" id="canvas1" width="150" height="150" style="border: 1px ridge black"></canvas>
+            <?php
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
+            } 
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
+            }
+            echo "<br>";
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
+            }
+            echo "<br>";
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
+            }
+            $i++;
+            if ($matches[0][$i] == 1) {
+                echo "<script>  var canvas2 = document.getElementById('canvas1');
+                var ctx = canvas2.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
+            }
+            $i++;
+
+            ?>
+        </div>
+
+
+        <div class="col s4 center" >                                  
+        <canvas name="canvas2" id="canvas2" width="150" height="150" style="border: 1px ridge black"></canvas>
         <?php
         if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
         } 
         $i++;
         if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
         }
         $i++;
         if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
-        }
-        echo "<br>";
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
-        }
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
-        }
-        $i++;
-        if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
         }
         echo "<br>";
         $i++;
         if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
         }
         $i++;
         if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
         }
         $i++;
         if ($matches[0][$i] == 1) {
-            echo "<script>  var canvas2 = document.getElementById('canvas2');
-            var ctx = canvas2.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
+        }
+        echo "<br>";
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas3 = document.getElementById('canvas2');
+            var ctx = canvas3.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
         }
         $i++;
 
         ?>
     </div>
 
+    <div class="col s4 center">                                  
+        <canvas name="canvas3" id="canvas3" width="150" height="150" style="border: 1px ridge black"></canvas>
+        <?php
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
+        } 
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
+        }
+        echo "<br>";
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
+        }
+        echo "<br>";
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas4 = document.getElementById('canvas3');
+            var ctx = canvas4.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
+        }
+        $i++;
 
-    <div class="col s4 center" >                                  
-       <canvas id="canvas3" width="150" height="150" style="border: 1px ridge black"></canvas>
-       <?php
-       if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
-    } 
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
-    }
-    echo "<br>";
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
-    }
-    echo "<br>";
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas3 = document.getElementById('canvas3');
-        var ctx = canvas3.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
-    }
-    $i++;
+        ?>
+        </div>
 
-    ?>
-</div>
+    <div class="col s4 center">                                   
+        <canvas name="canvas4" id="canvas4" width="150" height="150" style="border: 1px ridge black"></canvas>
+        <?php
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
+        } 
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
+        }
+        echo "<br>";
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
+        }
+        echo "<br>";
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
+        }
+        $i++;
+        if ($matches[0][$i] == 1) {
+            echo "<script>  var canvas5 = document.getElementById('canvas4');
+            var ctx = canvas5.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
+        }
+        $i++;
 
-<div class="col s4 center">                                  
-   <canvas id="canvas4" width="150" height="150" style="border: 1px ridge black"></canvas>
-   <?php
-   if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
-} 
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
-}
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
-}
-echo "<br>";
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
-}
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
-}
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
-}
-echo "<br>";
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
-}
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
-}
-$i++;
-if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas4 = document.getElementById('canvas4');
-    var ctx = canvas4.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
-}
-$i++;
-
-?>
-</div>
-
-<div class="col s4 center">                                   
-    <canvas id="canvas5" width="150" height="150" style="border: 1px ridge black"></canvas>
-    <?php
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
-    } 
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
-    }
-    echo "<br>";
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
-    }
-    echo "<br>";
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
-    }
-    $i++;
-    if ($matches[0][$i] == 1) {
-        echo "<script>  var canvas5 = document.getElementById('canvas5');
-        var ctx = canvas5.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
-    }
-    $i++;
-
-    ?>
-</div>
+        ?>
+    </div>
 
 <div class="col s4 center">                                  
-   <canvas id="canvas6" width="150" height="150" style="border: 1px ridge black"></canvas>
+   <canvas name="canvas5" id="canvas5" width="150" height="150" style="border: 1px ridge black"></canvas>
    <?php
    if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
 } 
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
 }
 echo "<br>";
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
 }
 echo "<br>";
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas6 = document.getElementById('canvas6');
+    echo "<script>  var canvas6 = document.getElementById('canvas5');
     var ctx = canvas6.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
 }
 $i++;
@@ -384,52 +377,52 @@ $i++;
 </div>
 
 <div class="col s4 center">  
-  <canvas id="canvas7" width="150" height="150" style="border: 1px ridge black"></canvas>
+  <canvas name="canvas6" id="canvas6" width="150" height="150" style="border: 1px ridge black"></canvas>
   <?php
   if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
 } 
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
 }
 echo "<br>";
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
 }
 echo "<br>";
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas7 = document.getElementById('canvas7');
+    echo "<script>  var canvas7 = document.getElementById('canvas6');
     var ctx = canvas7.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
 }
 $i++;
@@ -438,52 +431,52 @@ $i++;
 </div>
 
 <div class="col s4 center">                                  
-  <canvas id="canvas8" width="150" height="150" style="border: 1px ridge black"></canvas>
+  <canvas name="canvas7" id="canvas7" width="150" height="150" style="border: 1px ridge black"></canvas>
   <?php
   if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (0, 0, 50, 50); </script>";
 } 
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (50, 0, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (100, 0, 50, 50); </script>";
 }
 echo "<br>";
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (0, 50, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (50, 50, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (100, 50, 50, 50); </script>";
 }
 echo "<br>";
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (0, 100, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (50, 100, 50, 50); </script>";
 }
 $i++;
 if ($matches[0][$i] == 1) {
-    echo "<script>  var canvas8 = document.getElementById('canvas8');
+    echo "<script>  var canvas8 = document.getElementById('canvas7');
     var ctx = canvas8.getContext('2d');ctx.fillRect (100, 100, 50, 50); </script>";
 }
 $i++;
@@ -492,17 +485,18 @@ $i++;
 </div>
 
 
-<div class="col s4 center"><img style="border:1px ridge black;" src="http://148.60.11.218/Image/_ens5dyxgf/canvas8.png" alt=""></div>
+<div class="col s4 center">
+<canvas name="canvas8" id="canvas8" width="150" height="150" style="border: 1px ridge black"></canvas>
+</div>
+
 </div>
 </div>
 </div>
 
 
-<div class="input-field col s12">
-    <center >Quelle est la suite ?</center>
+<div class="input-field col s12 center">
+    <div id="IQquestion">Quelle est la suite ?</div>
 </div>
-
-<form action="http://148.60.11.218/index.php/test/testform/27/1" class="col s12" method="post" accept-charset="utf-8">
     <div class="container">
         <div class="row">
            <?php
@@ -565,57 +559,52 @@ $i++;
         ?>               
         <div class="col s4 center">
 
-            <canvas id="canvas9" width="150" height="150" style="border: 1px ridge black"></canvas>
+            <canvas name="canvas9" id="canvas9" width="150" height="150" style="border: 1px ridge black"></canvas>
             <?php 
             test("canvas9");
             ?>
             <label>
-                <input class="with-gap" name="answer" value=false type="radio" checked/>
                 <span></span>
             </label>
         </div>
 
-        <div class="col s4 center"><canvas id="canvas10" width="150" height="150" style="border: 1px ridge black"></canvas>
+        <div class="col s4 center"><canvas name="canvas10" id="canvas10" width="150" height="150" style="border: 1px ridge black"></canvas>
             <?php 
             test("canvas10");
             ?>
             <label>
-                <input class="with-gap" name="answer" value=false type="radio" checked/>
                 <span></span>
             </label>
         </div>
 
-        <div class="col s4 center"><canvas id="canvas11" width="150" height="150" style="border: 1px ridge black"></canvas>
+        <div class="col s4 center"><canvas name="canvas11" id="canvas11" width="150" height="150" style="border: 1px ridge black"></canvas>
             <?php 
             test("canvas11");
             ?>
             <label>
-                <input class="with-gap" name="answer" value=false type="radio" checked/>
                 <span></span>
             </label>
         </div>
 
-        <div class="col s4 center"><canvas id="canvas12" width="150" height="150" style="border: 1px ridge black"></canvas>
+        <div class="col s4 center"><canvas name="canvas12" id="canvas12" width="150" height="150" style="border: 1px ridge black"></canvas>
             <?php 
             test("canvas12");
             ?>
             <label>
-                <input class="with-gap" name="answer" value=false type="radio" checked/>
                 <span></span>
             </label>
         </div>
 
-        <div class="col s4 center"><canvas id="canvas13" width="150" height="150" style="border: 1px ridge black"></canvas>
+        <div class="col s4 center"><canvas name="canvas13" id="canvas13" width="150" height="150" style="border: 1px ridge black"></canvas>
             <?php 
             test("canvas13");
             ?>
             <label>
-                <input class="with-gap" name="answer" value=false type="radio" checked/>
                 <span></span>
             </label>
         </div>
 
-        <div class="col s4 center"><canvas id="canvas14" width="150" height="150" style="border: 1px ridge black"></canvas>
+        <div class="col s4 center"><canvas name="canvas14" id="canvas14" width="150" height="150" style="border: 1px ridge black"></canvas>
             <?php
 
             if ($matches[0][$i] == 1) {
@@ -668,81 +657,25 @@ $i++;
 
             ?>
             <label>
-                <input class="with-gap" name="answer" value=true type="radio" checked/>
+                
                 <span></span>
             </label>
         </div>
     </div>
 
     <div class="row center">
-        <button class="btn waves-effect blue" type="submit" name="action">Suivant
-            <i class="material-icons right">send</i>
-        </button>
-    </div>
+		<a id="enregistrer" class="waves-effect waves-light btn blue">Enregistrer</a>
+	</div>
 </div>
 </form>
 </br>
 </br>
-</form>
-
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js' type='text/javascript'></script>
-<?php include('z_include_footer.php'); ?>
+</div>
 </body>
 
-<style>
-
-    .container {
-      position: relative;
-      padding-left: 35px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      font-size: 18px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-  }
+<?php include('z_include_footer.php'); ?>
 
 
-  .area {
-    margin: 10px;
-    width: 150px;
-    height: 150px;
-    border: 4px dashed #2196f3;
-    background-color: #e3f2fd;
-    filter: alpha(opacity=50);
-    -khtml-opacity: 0.5;
-    -moz-opacity: 0.5;
-    opacity: 0.5;
-    text-align: center;
-    border-radius: 20px;
-}
-
-.area:hover,
-.area.dragging,
-.area.uploading {
-    filter: alpha(opacity=100);
-    -khtml-opacity: 1;
-    -moz-opacity: 1;
-    opacity: 1;
-}
-
-.area input {
-    width: 100%;
-    height: 100%;
-    border: none;
-    cursor: pointer;
-}
-
-.area input:focus {
-    outline: none;
-}
-
-
-}
-</style>
+<script src="<?php echo base_url(); ?>vendor/js/generateQuestion.js"></script>
 
 </html>
