@@ -20,7 +20,6 @@
 				<li><a href="/index.php/user">Utilisateurs</a></li>
 				<li><a href="/index.php/question/listeQuestions">Questions</a></li>
 				<li><a href="/index.php/test/listQuizz">Quizz</a></li>
-				<li><a href="/index.php/user">Utilisateurs</a></li>
 			<?php endif; ?>
 
 			<?php if (!$this->session->userdata('Loggin')) : ?>
