@@ -1,3 +1,8 @@
+library(OpenImageR)
+library(keras)
+library(tensorflow)
+
+
 gener_dep_h = function(vec_image){
   res = matrix(0,9,9)
   #Si le premier motif est sur la colonne de gauche de la premiere image
@@ -937,89 +942,33 @@ gener_iq  = function(){
   return(question)
 }
 
-inverse_IQ  = function(model, matrix1, matrix2, matrix3){
-  mat_motif1 = matrix(0,8,9)
-  mat_motif1[1,] = matrix1[1:9]
-  mat_motif1[2,] = matrix1[10:18]
-  mat_motif1[3,] = matrix1[19:27]
-  mat_motif1[4,] = matrix1[28:36]
-  mat_motif1[5,] = matrix1[37:45]
-  mat_motif1[6,] = matrix1[46:54]
-  mat_motif1[7,] = matrix1[55:63]
-  mat_motif1[8,] = matrix1[64:72]
-  test1 = matrix(0,2,2*9)
-  test1[1,] = c(as.matrix(mat_motif1[7,]), as.matrix(mat_motif1[8,]))
-  test1[2,] = c(as.matrix(mat_motif1[3,]), as.matrix(mat_motif1[6,]))
-  test1 = as.numeric(test1)
-  test1 = matrix(test1, nrow=2)
-  p1 = predict(model,test1)
-  out1 = matrix(0,1,9)
+inverse_IQ  = function(model, question){
+  mat_motif = question
+  mat_motif = data.matrix(mat_motif)
+  test = matrix(0,2,2*9)
+  test[1,] = c(as.matrix(mat_motif[7,]), as.matrix(mat_motif[8,]))
+  test[2,] = c(as.matrix(mat_motif[3,]), as.matrix(mat_motif[6,]))
+  test = as.numeric(test)
+  test = matrix(test, nrow=2)
+  p = predict(model,test)
+  out = matrix(0,1,9)
   for(j in 1:9){
-    if(p1[1,j]+p1[2,j]>0.7 && p1[1,j] !=0 && p1[2,j]!=0){
-      out1[1,j] = 1
+    if(p[1,j]+p[2,j]>0.7 && p[1,j] !=0 && p[2,j]!=0){
+      out[1,j] = 1
     }
   }
-  
-  
-  mat_motif2 = matrix(0,8,9)
-  mat_motif2[1,] = matrix2[1:9]
-  mat_motif2[2,] = matrix2[10:18]
-  mat_motif2[3,] = matrix2[19:27]
-  mat_motif2[4,] = matrix2[28:36]
-  mat_motif2[5,] = matrix2[37:45]
-  mat_motif2[6,] = matrix2[46:54]
-  mat_motif2[7,] = matrix2[55:63]
-  mat_motif2[8,] = matrix2[64:72]
-  test2 = matrix(0,2,2*9)
-  test2[1,] = c(as.matrix(mat_motif2[7,]), as.matrix(mat_motif2[8,]))
-  test2[2,] = c(as.matrix(mat_motif2[3,]), as.matrix(mat_motif2[6,]))
-  test2 = as.numeric(test2)
-  test2 = matrix(test2, nrow=2)
-  p2 = predict(model,test2)
-  out2 = matrix(0,1,9)
-  for(j in 1:9){
-    if(p2[1,j]+p2[2,j]>0.7 && p2[1,j] !=0 && p2[2,j]!=0){
-      out2[1,j] = 1
-    }
+  reponse = matrix(question[9,], nrow=1)
+  if((sum(reponse==out))==9){
+    print("Prediction identique")
   }
-  
-  mat_motif3 = matrix(0,8,9)
-  mat_motif3[1,] = matrix3[1:9]
-  mat_motif3[2,] = matrix3[10:18]
-  mat_motif3[3,] = matrix3[19:27]
-  mat_motif3[4,] = matrix3[28:36]
-  mat_motif3[5,] = matrix3[37:45]
-  mat_motif3[6,] = matrix3[46:54]
-  mat_motif3[7,] = matrix3[55:63]
-  mat_motif3[8,] = matrix3[64:72]
-  test3 = matrix(0,2,2*9)
-  test3[1,] = c(as.matrix(mat_motif3[7,]), as.matrix(mat_motif3[8,]))
-  test3[2,] = c(as.matrix(mat_motif3[3,]), as.matrix(mat_motif3[6,]))
-  test3 = as.numeric(test3)
-  test3 = matrix(test3, nrow=2)
-  p3 = predict(model,test3)
-  out3 = matrix(0,1,9)
-  for(j in 1:9){
-    if(p3[1,j]+p3[2,j]>0.7 && p3[1,j] !=0 && p3[2,j] !=0){
-      out3[1,j] = 1
-    }
+  else
+    {
+    print("Prediction différente")
   }
-  # reponse = matrix(question[9,], nrow=1)
-  # if((sum(reponse==out))==9){
-  #   print("Prediction identique")
-  # }
-  # else
-  #   {
-  #   print("Prediction différente")
-  # }
-  return(list(out1 = out1, out2= out2, out3= out3))
+  return(list(o = out, p = p))
 }
 
-
 learn = function(list_finale){
-  library(OpenImageR)
-  library(keras)
-  library(tensorflow)
 
   entree = matrix(0,4*length(list_finale),18)
   #lignes
@@ -1055,7 +1004,7 @@ learn = function(list_finale){
     optimizer = 'adam',
     metrics = 'mse'
   )
-  model %>% fit(entree, sortie, epochs = 50, batch.size = 10, view.metrics = F, verbose=0) 
+  model %>% fit(entree, sortie, epochs = 1, batch.size = 10, view.metrics = F, verbose=0) 
   
   return(model)
 }

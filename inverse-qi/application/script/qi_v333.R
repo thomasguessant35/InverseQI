@@ -1,39 +1,25 @@
 #install.packages("R.utils")
 #library(R.utils)
-args = commandArgs(trailingOnly=TRUE)
 
-#Crï¿½ation des vecteurs diffï¿½rents dans la liste Vecteurs
+
+#Création des vecteurs différents dans la liste Vecteurs
 vecteurs = gener_vecteurs2()
+#length(vecteurs)
+
+
 #Application des fonctions aux vecteurs
 list = gener_listes(vecteurs)
 list_h = list$list_hor
 list_v = list$list_ver
 list_finale = list$list_final
+print(length(list_finale))
 #Apprendre le jeu aux neurones
-model =learn(list_finale)
+#model =learn(list_finale)
 
-#Gï¿½nï¿½ration de question
-question=100000000000000000000000000000000000000000000000000000000000000000000000
-question=as.character(question)
-question=strsplit(question,"")
-question=as.vector(question[[1]])
-
-question2=000000000000000000000000000000000000000000000000000000000000000000000000
-question2=as.character(question2)
-question2=strsplit(question2,"")
-question2=as.vector(question2[[1]])
-
-question3=000000000000000000000000000000000000000000000000000000000000000000000000
-question3=as.character(question3)
-question3=strsplit(question3,"")
-question3=as.vector(question3[[1]])
-
-#Inverse IQ : vï¿½rifie sur la reponse prï¿½dite est identique ï¿½ la vraie reponse
-#prediction = inverse_IQ(model, question, question2, question3)
-
-#print(prediction$out1)
-#print(prediction$out2)
-#print(prediction$out3)
+#Génération de question
+#question = gener_iq()
+#Inverse IQ : vérifie sur la reponse prédite est identique à la vraie reponse
+#prediction = inverse_IQ(model, question)
 
 
 #print(i/(m+i)*100)
